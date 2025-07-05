@@ -22,5 +22,3 @@ features:
     title: 占位
     details: efgnwjregbhnw
 ---
-
-![An image](./coolapk.svg)
