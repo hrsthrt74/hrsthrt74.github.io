@@ -8,9 +8,9 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: '搞机', link: '/doc/android' },
-      { text: '设计', link: '/doc/design' },
-      { text: '关于我', link: '/doc/about74'}
+      { text: '搞机', link: '/docs/android' },
+      { text: '设计', link: '/docs/design' },
+      { text: '关于我', link: '/docs/about74'}
     ],
 
     sidebar: [
