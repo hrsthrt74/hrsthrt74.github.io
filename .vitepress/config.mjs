@@ -30,7 +30,7 @@ export default defineConfig({
     ],
 
     footer: {
-      message: '根据 MIT 许可证发布',
+      message: '根据 MIT 许可证发布 / Powered by VitePress',
       copyright: 'Copyright © 2023-present hrsthrt74'
     },
 
