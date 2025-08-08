@@ -1,2 +1,6 @@
 # VSCode 的配置文件
 .vscode
+
+# Vitepress 推荐的目录
+.vitepress/cache
+.vitepress/dist

@@ -7,4 +7,6 @@
 
 ---
 
-- [The Comander](./The_Commander.md)
+[![PoP☆P](../../../public/header_pic/PoP☆P.png)](./Pop_star_P.md)
+
+[![The Commander](../../../public/header_pic/The%20Commander.png)](./The_Commander.md)

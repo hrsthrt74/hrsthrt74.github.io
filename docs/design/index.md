@@ -1,6 +1,8 @@
-# 设计
-这里是我，一个没有系统学习过的设计爱好者，的一些记录以及展示。
+![Header](../../public/header_pic/设计.png)
+这里是我，一个没有系统学习过的设计爱好者的一些记录、展示，以及背后的故事。
 
-## 目录
-- [头像幕后](../design/avatar/index.md)
-- [表盘幕后](../design/watchface/index.md)
+---
+
+[![Header](../../public/header_pic/头像.png)](../design/avatar/index.md)
+
+[![Header](../../public/header_pic/表盘.png)](../design/watchface/index.md)

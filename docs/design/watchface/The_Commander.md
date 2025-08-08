@@ -1,5 +1,5 @@
 # The Commander
-![](../../../public/doc/design/watchface/The%20Commander%20海报%20横版.jpg)
+![](../../../public/doc/design/watchface/the_commander/The%20Commander%20海报%20横版.jpg)
 ###### 2025/7/6
 我的第一款原创表盘，也是第一款付费的表盘。
 
@@ -35,7 +35,7 @@
 
 虽然快高考了但还是紧张不起来，反而灵感<u>大发</u>（？）
 
-![The Commander PROTOTYPE](../../../public/doc/design/watchface/The%20Commander%20PROTOTYPE.jpg)
+![The Commander PROTOTYPE](../../../public/doc/design/watchface/the_commander/The%20Commander%20PROTOTYPE.jpg)
 
 但也能注意到，最初版跟最终版的设计有**较大出入**，这个后面再说。
 
@@ -80,7 +80,7 @@
 
 **第一次做这么大的工程，学到不少，也很累。**（因为跟以往的作品比工作量大了很多）
 
-![Canvas](../../../public/doc/design/watchface/The%20Commander%20Canvas.png)
+![Canvas](../../../public/doc/design/watchface/the_commander/The%20Commander%20Canvas.png)
 
 对于喜欢简洁 ~~懒~~ 的我来说，这确实是个不小的挑战。。。
 
@@ -105,7 +105,7 @@
 
 做的时候，我看秒数的图标，突然想到——**能不能让他真的转起来**？
 
-![秒针](../../../public/doc/design/watchface/second.gif)
+![秒针](../../../public/doc/design/watchface/the_commander/second.gif)
 
 .....算是一个小彩蛋吧。😂
 
@@ -115,22 +115,9 @@
 
 由于编译器的限制，组件的坐标**不能为负值**。所以“时光滚轮”的设计其实是跟设计稿有少许出入的，**并没有严格贴边**。设计稿里的[出血](https://zh.wikipedia.org/wiki/%E5%87%BA%E8%A1%80_(%E5%8D%B0%E5%88%B7))留得太多了~~我下次注意orz
 
-## 收益化与定价
-这是我的第一个付费的表盘，也是**纯原创设计**让我有了这样的想法。
-::: details 那非原创设计呢？
-根据在 Minecraft 社区的经验，我认为（至少是我自己，别人我管不了）还是**不应该让非原创设计的表盘拿去盈利的**。
-
-比如立绘。目前社区里多数付费的，使用立绘的表盘，估计大多都是**未经授权的**。官方不制裁直接使用官方素材进行盈利的人可能是**情分**，也可能是**懒得管**；但个人不应这么做，**大概是本分才对**。
-:::
-观察社区，多数多样式的表盘定价在 3 元左右。我觉得这次算是**原创处女作**，且没有多样式，没有编辑组件（技术所限），更没有“吸引人的立绘”。
-
-于是便以日常生活最基础的商品——矿泉水（2 元）为**锚点**。定了 1.89 元的价格。1.99 元可能还是会有人觉得不值，那么就让他**再降一小挡**，1.89。这样的话，既能保证**不低的收入**，也能让买家**不会感到不值或者被劝退**。
-
-~~毕竟谁都不想让顾客被吓跑嘛~~~~~
-
 ## 海报
 ::: details 横版
-![](../../../public/doc/design/watchface/The%20Commander%20海报%20横版.jpg)
+![](../../../public/doc/design/watchface/the_commander/The%20Commander%20海报%20横版.jpg)
 :::
 简简单单的设计。
 
@@ -142,7 +129,7 @@
 
 ---
 ::: details 前瞻海报
-![前瞻海报](../../../public/doc/design/watchface/The%20Commander%20前瞻海报.jpg)
+![前瞻海报](../../../public/doc/design/watchface/the_commander/The%20Commander%20前瞻海报.jpg)
 :::
 还做了预热的海报。当时**大多数的制作工作已经完成**，可以预热了。考虑到我自己本身人气也不高，就选择了**只预热 24 小时不到**，然后就发布了。
 
@@ -185,6 +172,28 @@
 **图省事没用 AE**。结果并没有省事多少。
 :::
 
+## AstroBox 宣传海报
+为了上架 AstroBox 还做了海报。
+
+::: details 海报
+![preview0](../../../public/doc/design/watchface/the_commander/preview0.png)
+![preview1](../../../public/doc/design/watchface/the_commander/preview1.png)
+![preview2](../../../public/doc/design/watchface/the_commander/preview2.png)
+![preview3](../../../public/doc/design/watchface/the_commander/preview3.png)
+![preview4](../../../public/doc/design/watchface/the_commander/preview4.png)
+:::
+
+其中「特点」这一部分仿的是苹果近几年使用的产品特性 lineup 的展示方式——网格。
+
+::: details 参考
+![参考](https://appleslides.com/assets/slides/[WWDC%20June%202024]-[Mac]-[macOS%2015].webp)
+![preview1](../../../public/doc/design/watchface/the_commander/preview1.png)
+:::
+
+不少设计都是一拍脑门子想出来的（x）。
+
+当时没想到 AstroBox 能做到点击作者链接跳转到爱发电，就在图里放了个二维码，方便截屏之后识别跳转。也留了 ID，可以搜 ID 跳转到爱发电。
+
 ## 后日谈
 做表盘，也还需要点**自知之明**的（？）。据我观察，更受大家喜欢的，还是**带立绘的**，**二次元的**表盘。简洁风想做到受欢迎还是太难了。既然选择了简洁风格，那就必须要接受可能没人气这个事实。
 
@@ -210,6 +219,7 @@
 - 右下角的睡眠图标（zzz）其实是**手搓的**。
 - 表盘文件里藏了两处**暗水印**。~~你能把他们全部找到吗？）））~~
 - 表盘没有黑色背景图片，直接用了**系统默认的黑色画布**，减少了一些没必要的体积。
+- 由于设计原因，**只适配了 9P 和 8P**。RW5 虽然也是方屏，但是竖向上给时间留的空间太小了，看上去太挤，因此没做。圆表的话，四周空间过大，强行适配的话看起来太怪了。跑道屏就不用说了吧，时光滚轮都没了，特色都丢了还做啥了😂
 
 ## 感谢你看到这里！
 如果你觉得这设计过程也是不容易的话，不如考虑支持一下我🌚

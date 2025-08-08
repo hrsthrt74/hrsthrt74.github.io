@@ -4,21 +4,18 @@ layout: home
 
 hero:
   name: "Blog 74th"
-  text: ""
-  tagline: hrsthrt74 的个人博客
+  text: "hrsthrt74 的个人博客"
+  tagline: 
   actions:
-    - theme: brand
-      text: 按钮1
-      link: /markdown-examples
-    - theme: alt
-      text: 按钮2
-      link: /api-examples
 
 features:
-  - icon: 😘
-    title: 欢迎来到 hrsthrt74 的个人博客
-    details: 搞机、自述、资源分享...
-  - icon: 74
-    title: 占位
-    details: efgnwjregbhnw
+  - icon: 👀
+    title: 设计
+    details: 关于我的设计背后的历程，以及小秘密
+  - icon: 🧐
+    title: 搞机
+    details: Android 以及其它领域的教程存档
+  - icon: 🤗
+    title: 关于我
+    details: 想了解我更多的话欢迎~~
 ---
