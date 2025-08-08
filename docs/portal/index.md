@@ -1,4 +1,4 @@
-![Header](../../public/header_pic/传送门.png)
+![Header](../../public/header_pic/传送门.svg)
 一些有用的工具 or 信息。
 
 ::: tip Clipboard 74th

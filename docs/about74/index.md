@@ -1,4 +1,4 @@
-![Header](../../public/header_pic/关于我.png)
+![Header](../../public/header_pic/关于我.svg)
 关于 hrstrt74 的一切（？）。
 
 ## 目录
