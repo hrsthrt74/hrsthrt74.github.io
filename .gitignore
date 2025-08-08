@@ -2,5 +2,5 @@
 .vscode
 
 # Vitepress 推荐的目录
-.vitepress/cache
-.vitepress/dist
+.vitepress/cache/
+.vitepress/dist/
