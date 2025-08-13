@@ -14,7 +14,7 @@
 :::
 
 ::: tip VitePress
-[Markdown 扩展](https://vitepress.dev/zh/guide/markdown#custom-containers)
+[Markdown 扩展](https://vitepress.dev/zh/guide/)
 
 [站点配置](https://vitepress.dev/zh/reference/site-config)
 :::

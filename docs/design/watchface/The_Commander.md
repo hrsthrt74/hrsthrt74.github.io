@@ -35,7 +35,7 @@
 
 虽然快高考了但还是紧张不起来，反而灵感<u>大发</u>（？）
 
-![The Commander PROTOTYPE](../../../public/doc/design/watchface/the_commander/The%20Commander%20PROTOTYPE.jpg)
+![The Commander 草稿](../../../public/doc/design/watchface/the_commander/The%20Commander%20草稿.jpg)
 
 但也能注意到，最初版跟最终版的设计有**较大出入**，这个后面再说。
 

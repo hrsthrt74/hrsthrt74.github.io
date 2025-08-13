@@ -6,7 +6,8 @@
 以时间倒序排序。
 
 ---
+[![authRD](../../../public/header_pic/authRD.webp)](./authRD.md)
 
-[![PoP☆P](../../../public/header_pic/PoP☆P.png)](./Pop_star_P.md)
+[![PoP☆P](../../../public/header_pic/pop_p.webp)](./Pop_star_P.md)
 
-[![The Commander](../../../public/header_pic/The%20Commander.png)](./The_Commander.md)
+[![The Commander](../../../public/header_pic/the_commander.webp)](./The_Commander.md)
