@@ -30,6 +30,7 @@ export default defineConfig({
 
     // 顶部导航栏
     nav: [
+      { text: '🤔 杂谈', link: '/docs/misc_talk' },
       { text: '✍️ 设计', link: '/docs/design' },
       { text: '🛠️ 搞机', link: '/docs/technical' },
       { text: '🏄 关于我', link: '/docs/about74'},

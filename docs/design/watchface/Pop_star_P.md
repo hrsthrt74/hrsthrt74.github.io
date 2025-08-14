@@ -1,3 +1,12 @@
+---
+prev:
+  text: 'authRD'
+  link: 'docs/design/watchface/authRD'
+next:
+  text: 'The Commander'
+  link: 'docs/design/watchface/The_Commander'
+---
+
 # PoP☆P
 ![banner](https://raw.githubusercontent.com/hrsthrt74/pop-star-p-for-astrobox/refs/heads/main/preview0.png)
 ###### 2025/7/25

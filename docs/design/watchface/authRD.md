@@ -1,3 +1,10 @@
+---
+next:
+  text: 'PoP☆P'
+  link: 'docs/design/watchface/Pop_star_P'
+---
+
+# authRD
 ![cover](https://raw.githubusercontent.com/hrsthrt74/authRD-for-astrobox/refs/heads/main/preview0.png)
 
 ##### 6th Watchface / 2025/8/9

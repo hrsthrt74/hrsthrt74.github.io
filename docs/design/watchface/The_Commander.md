@@ -1,3 +1,9 @@
+---
+prev:
+  text: 'PoP☆P'
+  link: 'docs/design/watchface/Pop_star_P'
+---
+
 # The Commander
 ![](../../../public/doc/design/watchface/the_commander/The%20Commander%20海报%20横版.jpg)
 ###### 2025/7/6
