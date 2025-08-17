@@ -3,6 +3,8 @@ import { h } from 'vue'
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
 
+import WFDownloadBtn from '../theme/components/watchface_download_button.vue'
+
 /** @type {import('vitepress').Theme} */
 export default {
   extends: DefaultTheme,
@@ -13,5 +15,6 @@ export default {
   },
   enhanceApp({ app, router, siteData }) {
     // ...
+    app.component('WFDownloadBtn', WFDownloadBtn)
   }
 }

@@ -266,6 +266,4 @@ auth 和 RD 之间没有空格。一是为了**紧凑**，二是不加空格**�
 ## 感谢你看到这里！
 不妨去 AstroBox 下载体验一下😋
 
-<a href="https://astrobox.online/open?source=res&res=authRD&provider=official" target="_blank" rel="noopener noreferrer">
-  <img src="https://astrobox.online/goab/zhcn/linked/white.svg">
-</a>
+<WFDownloadBtn title="authRD" resourceName="authRD" />

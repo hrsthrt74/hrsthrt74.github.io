@@ -60,7 +60,7 @@ export default defineConfig({
 
     // 页脚
     footer: {
-      message: '根据 MIT 许可证发布 / Powered by VitePress',
+      message: '除非另有说明，本站内容采用 CC BY-NC-SA 4.0 许可协议发布 / Powered by VitePress',
       copyright: 'Copyright © 2023-present hrsthrt74'
     },
 

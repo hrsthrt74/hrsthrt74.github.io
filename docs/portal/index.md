@@ -1,5 +1,6 @@
 <script setup>
-import AstroBoxResLinkGen from '../../public/components/astrobox_res_link_gen.vue'
+import AstroBoxResLinkGen from '/.vitepress/theme/components/astrobox_res_link_gen.vue'
+import CountdownTimer from '/.vitepress/theme/components/countdown.vue'
 </script>
 
 
@@ -20,7 +21,7 @@ import AstroBoxResLinkGen from '../../public/components/astrobox_res_link_gen.vu
 <iframe src="https://miband.zaona.top/" width="500" height="1040" frameborder="0" loading="lazy"></iframe>
 :::
 
-::: tip VitePress
+::: details VitePress 文档快速跳转
 [Markdown 扩展](https://vitepress.dev/zh/guide/)
 
 [站点配置](https://vitepress.dev/zh/reference/site-config)
@@ -30,11 +31,12 @@ import AstroBoxResLinkGen from '../../public/components/astrobox_res_link_gen.vu
 <AstroBoxResLinkGen />
 :::
 
+::: details How old is Minecraft 1.7.10 Today?
+<CountdownTimer targetDate="2014-06-26T12:00:00" />
+:::
 
 
-
-
-
+<WFDownloadBtn title="我是显示标题" resourceName="我是资源名称" />
 
 
 
