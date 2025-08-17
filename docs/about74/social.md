@@ -44,7 +44,7 @@
 
 ## 联系我
 你可以加入我的 QQ 群组。
-- 搞机相关 SpaceStation 74th：**518723975**
+- 技术相关 SpaceStation 74th：**518723975**
 - 表盘工坊 WatchfaceWorkshop 74th：**608811407**
 
 或是电邮：`hrsthrt74⭐qq.com`

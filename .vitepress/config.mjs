@@ -32,7 +32,7 @@ export default defineConfig({
     nav: [
       { text: '🤔 杂谈', link: '/docs/misc_talk' },
       { text: '✍️ 设计', link: '/docs/design' },
-      { text: '🛠️ 搞机', link: '/docs/technical' },
+      { text: '🛠️ 技术', link: '/docs/technical' },
       { text: '🏄 关于我', link: '/docs/about74'},
       { text: '*️⃣ 传送门', link: '/docs/portal'}
     ],
