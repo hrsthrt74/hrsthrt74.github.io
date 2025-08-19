@@ -93,11 +93,10 @@ const clearInput = () => {
     -->
 
     <div class="input-section">
-      <label for="resourceNameInput">资源名称：</label>
       <input
         id="resourceNameInput"
         v-model="resourceName"
-        placeholder="例：多彩线条"
+        placeholder="资源名称"
         @keyup.enter="copyLink"
       />
     </div>

@@ -6,7 +6,11 @@
 
 ---
 
-- [我的社交媒体](./social.md)
+- [我的项目](./projects.md)
+
+---
+
+- [我的社交媒体 / 游戏账号](./social.md)
 - [为什么 ID 叫 hrsthrt74？](./why_hrsthrt74.md)
 
 ---

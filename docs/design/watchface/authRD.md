@@ -1,4 +1,8 @@
 ---
+prev:
+  text: 'banDS'
+  link: 'docs/design/watchface/banDS'
+
 next:
   text: 'PoP☆P'
   link: 'docs/design/watchface/Pop_star_P'

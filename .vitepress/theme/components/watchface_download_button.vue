@@ -65,8 +65,9 @@ const linkUrl = computed(() => { // 也可以把 linkUrl 变成 computed，虽�
 }
 
 .card-link-button img {
-  height: 48px; /* 设定固定高度 */
+  height: 40px; /* 设定固定高度 */
   width: auto; /* 宽度自动调整以保持比例 */
   vertical-align: middle;
+  margin-left: 8px;
 }
 </style>

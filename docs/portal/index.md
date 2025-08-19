@@ -29,6 +29,8 @@ import CountdownTimer from '/.vitepress/theme/components/countdown.vue'
 
 ::: details 🔗 AstroBox 资源链接生成器
 <AstroBoxResLinkGen />
+
+或者也可以前往 [AstroBooox](https://astrobooox.pages.dev/) 使用更全面的生成器。
 :::
 
 ::: details How old is Minecraft 1.7.10 Today?
