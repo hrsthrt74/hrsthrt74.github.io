@@ -558,6 +558,9 @@ BanDS？banDS？
   ![alt text](../../../public/doc/design/watchface/banDS/QQ_2aa9gLwRcy.png)
   :::
 
+- 制作的时候在纸上写了很多东西，请看图：
+  ![alt text](../../../public/doc/design/watchface/banDS/草稿.jpg)
+
 
 
 
