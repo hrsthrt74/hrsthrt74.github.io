@@ -1,11 +1,11 @@
 ---
 prev:
   text: 'banDS'
-  link: 'docs/design/watchface/banDS'
+  link: 'docs/creation/watchface/banDS'
 
 next:
   text: 'PoP☆P'
-  link: 'docs/design/watchface/Pop_star_P'
+  link: 'docs/creation/watchface/Pop_star_P'
 ---
 
 # authRD
@@ -65,12 +65,12 @@ next:
 ## 画大饼
 9 个月前……
 
-与 [The Commander](../../../docs/design/watchface/The_Commander.md) 如出一辙，也是**上课摸鱼的时候**想到的设计。~~可惜草稿找不到了~~
+与 [The Commander](../../../docs/creation/watchface/The_Commander.md) 如出一辙，也是**上课摸鱼的时候**想到的设计。~~可惜草稿找不到了~~
 
 不过这张图的完成度比 The Commander 的草图的**完成度更高**。当时正好有在搞**实物的自定义通行证**，因为摸不到电脑就在纸上很认真地画了。authRD 的草图也是“**托了它的福**”，画的比较认真。
 
 ::: details 挺详细的 MC 通行证草稿
-![MC 通行证 草稿](../../../public/doc/design/watchface/authRD/MC%20通行证%20草稿.jpg)
+![MC 通行证 草稿](../../../public/doc/creation/watchface/authRD/MC%20通行证%20草稿.jpg)
 
 **字丑**。另外别问为什么写的字全是英文，问就是在学校的**奇怪的习惯**，防别人看懂用的（（（）
 
@@ -78,7 +78,7 @@ next:
 
 下面是实物图：
 
-![MC 通行证 实物图](../../../public/doc/design/watchface/authRD/MC%20通行证%20实物图.webp)
+![MC 通行证 实物图](../../../public/doc/creation/watchface/authRD/MC%20通行证%20实物图.webp)
 :::
 
 ---
@@ -86,7 +86,7 @@ next:
 在这之后，24 年年末的时候搞了个图**预览**。
 
 ::: details 图
-![第一版](../../../public/doc/design/watchface/authRD/通行证表盘%20第一版.jpg)
+![第一版](../../../public/doc/creation/watchface/authRD/通行证表盘%20第一版.jpg)
 不过效果一般。左边栏看起来还是**有点乱**。
 :::
 
@@ -97,7 +97,7 @@ next:
 
 旅游后回来想做点什么，但又不知道做些什么......于是就又想起来了这个项目。**那就开工**！
 
-![画布](../../../public/doc/design/watchface/authRD/画布.png)
+![画布](../../../public/doc/creation/watchface/authRD/画布.png)
 
 这次开工和 The Commander 一样，跟原稿都有**较大的出入**。当时想到原设计左边一列全是数字**看着乱**，这次就把下半部分改成了与通行证原设计相同的**条形码区域**。
 
@@ -119,8 +119,8 @@ next:
 原版的 RHODES ISLAND 文字是紧贴边的。然而在表盘上，因为有 48px 的圆角，并不能让数字也贴边，贴边的话观感会**很差**——如果第一位数字是 1 那还好，可是 0 和 2 呢？
 
 ::: details 异变哒
-![](../../../public/doc/design/watchface/authRD/0%20贴边.png)
-![](../../../public/doc/design/watchface/authRD/2%20贴边.png)
+![](../../../public/doc/creation/watchface/authRD/0%20贴边.png)
+![](../../../public/doc/creation/watchface/authRD/2%20贴边.png)
 :::
 
 答案显而易见了。于是数字下放了一些。这样的话，显示 0 和 2 时的裁切就达到了**可以忽略的程度**。PASS ✓
@@ -138,7 +138,7 @@ next:
 
 条形码旁边的文字，原版是干员代号。表盘这里则是放的日期。这个是考虑到右侧已经有了干员代号，且**日期缺个地方放**……嗯，那就这里吧。
 
-![](../../../public/doc/design/watchface/authRD/干员代号.png)
+![](../../../public/doc/creation/watchface/authRD/干员代号.png)
 
 ---
 
@@ -154,7 +154,7 @@ next:
 
 ---
 
-![](../../../public/doc/design/watchface/authRD/AOD%20预览图.png)
+![](../../../public/doc/creation/watchface/authRD/AOD%20预览图.png)
 AOD 本来是不打算加条形码的，但是感觉**左边太空了**，还是加上了。
 
 ---
@@ -162,7 +162,7 @@ AOD 本来是不打算加条形码的，但是感觉**左边太空了**，还是
 ::: details 好像还缺点什么？
 嗯，原设计 ~~意义不明~~ 的彩条我没加。我觉得加上的话，在手环上看起来就有点太乱了……
 
-![](../../../public/doc/design/watchface/authRD/意义不明的彩条.jpg)
+![](../../../public/doc/creation/watchface/authRD/意义不明的彩条.jpg)
 :::
 
 ## 把大象装进冰箱里
@@ -177,7 +177,7 @@ AOD 本来是不打算加条形码的，但是感觉**左边太空了**，还是
 
 也有参考我手上买过的一个迷你通行证。
 
-![](../../../public/doc/design/watchface/authRD/迷你通行证.jpg)
+![](../../../public/doc/creation/watchface/authRD/迷你通行证.jpg)
 
 这个是 5cm*5cm 的，也需要简化元素。于是拿它做了参考。
 
@@ -215,7 +215,7 @@ authRD 吧！
 auth 和 RD 之间没有空格。一是为了**紧凑**，二是不加空格**也比较容易分辨**两个单词，于是就这样命名了。
 
 ## 图标
-![](../../../public/doc/design/watchface/authRD/icon.png)
+![](../../../public/doc/creation/watchface/authRD/icon.png)
 
 提取了表盘**最核心的三个元素**——时间、条形码、立绘。并很好地把他们塞进了圆里（（（
 
@@ -232,14 +232,14 @@ auth 和 RD 之间没有空格。一是为了**紧凑**，二是不加空格**�
 
 框框的样式模仿了方舟里的 ~~奸商可露希尔的月卡广告~~ 滚动 Banner。
 
-![](../../../public/doc/design/watchface/authRD/方舟%20Banner.png)
+![](../../../public/doc/creation/watchface/authRD/方舟%20Banner.png)
 
 其余的部分其实没有太多好讲的。有稍微试着去模仿“**舟味**”，但是**技术力不足** ~~再加上我还是懒~~ 所以看起来并没有多少舟味。
 
 ## 其他玩法？
 🔥🔥🔥**赛博通行证**！！
 
-![](../../../public/doc/design/watchface/authRD/真正的通行证.jpg)
+![](../../../public/doc/creation/watchface/authRD/真正的通行证.jpg)
 
 可惜不能**常显**，真挂起来的话不仅**成本高**，**风险也高**（容易磕碰 / 被顺走），**图一乐**就得了。
 
@@ -264,7 +264,7 @@ auth 和 RD 之间没有空格。一是为了**紧凑**，二是不加空格**�
 - 本来还打算**做个 Logo** 配合宣传，想仿《**明日方舟 终末地**》的 Logo 设计，后来也是因为懒，摸了。
 
 ::: details 终末地 Logo
-![](../../../public/doc/design/watchface/authRD/终末地.png)
+![](../../../public/doc/creation/watchface/authRD/终末地.png)
 :::
 
 ## 感谢你看到这里！

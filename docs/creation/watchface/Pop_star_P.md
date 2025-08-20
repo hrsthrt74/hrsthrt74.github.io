@@ -1,10 +1,10 @@
 ---
 prev:
   text: 'authRD'
-  link: 'docs/design/watchface/authRD'
+  link: 'docs/creation/watchface/authRD'
 next:
   text: 'The Commander'
-  link: 'docs/design/watchface/The_Commander'
+  link: 'docs/creation/watchface/The_Commander'
 ---
 
 # PoP☆P
@@ -61,7 +61,7 @@ next:
 也正好赶上高考后的暑假，有时间了，这不开搞？（（（
 
 ## 设计
-![canvas](../../../public/doc/design/watchface/pop_star_p/canvas.png)
+![canvas](../../../public/doc/creation/watchface/pop_star_p/canvas.png)
 
 时间的字体没用游戏内的字体，而是用了 [Mochiy Pop One](https://fonts.google.com/specimen/Mochiy+Pop+One)，HyperOS 2 的锁屏预设字体之一。这个属于是**一拍脑门想出来的**（）不过好在实际效果还是不错的。
 
@@ -87,7 +87,7 @@ next:
 ![refence](https://cdn.wikirby.com/thumb/2/2f/KSA_Whispy_Woods_splash.jpg/800px-KSA_Whispy_Woods_splash.jpg)
 引用自 [Wikirby](https://wikirby.com/wiki/Kirby_Wiki)。
 
-![bg](../../../public/doc/design/watchface/pop_star_p/bg.png)
+![bg](../../../public/doc/creation/watchface/pop_star_p/bg.png)
 :::
 
 ---
@@ -97,7 +97,7 @@ next:
 ![refence](https://cdn.wikirby.com/2/2f/KSA_Logo_Chinese.png)
 引用自 [Wikirby](https://wikirby.com/wiki/Kirby_Wiki)。
 
-![logo](../../../public/doc/design/watchface/pop_star_p/logo.png)
+![logo](../../../public/doc/creation/watchface/pop_star_p/logo.png)
 :::
 
 ---
@@ -110,7 +110,7 @@ next:
 :::
 
 ## Banner
-![banner](../../../public/doc/design/watchface/pop_star_p/banner.png)
+![banner](../../../public/doc/creation/watchface/pop_star_p/banner.png)
 一口气上传了**五个**资源到 AstroBox，结果真的得到了**开发组的注意**（）
 
 ::: tip 开发组说：
@@ -120,7 +120,7 @@ next:
 有点**受宠若惊**的感觉...不过**我的目的**也确实**达到了**~
 
 ::: details 看起来是这样的：
-![banner preview](../../../public/doc/design/watchface/pop_star_p/banner%20preview.png)
+![banner preview](../../../public/doc/creation/watchface/pop_star_p/banner%20preview.png)
 :::
 
 ## 后日谈

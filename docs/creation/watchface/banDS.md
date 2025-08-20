@@ -1,7 +1,7 @@
 ---
 next:
   text: 'authRD'
-  link: 'docs/design/watchface/authRD'
+  link: 'docs/creation/watchface/authRD'
 ---
 
 
@@ -149,7 +149,7 @@ next:
 ## 状态栏
 原版的状态栏是这样的：
 
-![alt text](../../../public/doc/design/watchface/banDS/原版的标题栏.png)
+![alt text](../../../public/doc/creation/watchface/banDS/原版的标题栏.png)
 
 从左到右分别是：用户名、时间、日期、GBA 游戏模式、开机模式、电量。
 
@@ -157,7 +157,7 @@ next:
 
 表盘不需要那么多信息，只留下了用户名、日期、电量。
 
-![alt text](../../../public/doc/design/watchface/banDS/顶栏.png)
+![alt text](../../../public/doc/creation/watchface/banDS/顶栏.png)
 
 时间的话我觉得没必要加，**下面已经有更大的了**为啥还要看更小的呢（）
 
@@ -177,7 +177,7 @@ next:
 
 顶栏的颜色还有**仿色 / 抖动**的效果。
 
-![alt text](../../../public/doc/design/watchface/banDS/仿色.webp)
+![alt text](../../../public/doc/creation/watchface/banDS/仿色.webp)
 
 做的时候，在 PS 里画了中间的部分，然后在 Figma 里把图片填充类型改成**平铺**，就能在水平方向上**无限延伸**了。
 
@@ -191,7 +191,7 @@ next:
 
 模拟时钟没什么好讲的，就是**照搬原作**；直接来看数字时钟：
 
-![alt text](../../../public/doc/design/watchface/banDS/数字时钟.webp)
+![alt text](../../../public/doc/creation/watchface/banDS/数字时钟.webp)
 
 ......不过也是平平无奇的设计。不过既然不是主打的时钟样式，**看起来说得过去**就行（）
 
@@ -207,7 +207,7 @@ next:
 
 
 ### 小组件边框（编辑按钮）
-![alt text](../../../public/doc/design/watchface/banDS/模拟时钟+编辑图标.webp)
+![alt text](../../../public/doc/creation/watchface/banDS/模拟时钟+编辑图标.webp)
 
 顶层图标照搬了 **PictoChat** 的设计，底层则是主屏幕下方设置的图标的底图。
 
@@ -216,7 +216,7 @@ next:
 ::: details PictoChat
 ↙️ 左边栏的笔
 
-![alt text](../../../public/doc/design/watchface/banDS/PictoChat.webp)
+![alt text](../../../public/doc/creation/watchface/banDS/PictoChat.webp)
 
 没想到居然能像素完美地塞进那个按钮底图里，
 
@@ -230,7 +230,7 @@ next:
 众所周知，不用 **Lua** 的话，是**做不到**原版的日历效果的。
 
 ::: details 原版日历是啥样的？
-![alt text](../../../public/doc/design/watchface/banDS/原版日历.png)
+![alt text](../../../public/doc/creation/watchface/banDS/原版日历.png)
 
 高亮今日。
 :::
@@ -246,7 +246,7 @@ next:
 
 :::
 
-![alt text](../../../public/doc/design/watchface/banDS/日历.png)
+![alt text](../../../public/doc/creation/watchface/banDS/日历.png)
 
 小字 20pt，大字 50pt，完美解决~
 
@@ -264,7 +264,7 @@ next:
 ::: details 第一版
 先设计了上半部分。下半部分只是预览
 
-![](../../../public/doc/design/watchface/banDS/WF%20v1.png)
+![](../../../public/doc/creation/watchface/banDS/WF%20v1.png)
 
 看着还不错？
 
@@ -283,7 +283,7 @@ next:
 ::: details 第二版
 开始着手下半部分的网格设计了：
 
-![](../../../public/doc/design/watchface/banDS/WF%20v2.jpg)
+![](../../../public/doc/creation/watchface/banDS/WF%20v2.jpg)
 
 然而设计完发现**天塌了**：下方的网格完全可以给上面用，完美解决了上方网格看起来**太密**的问题。。。
 
@@ -295,37 +295,37 @@ next:
 
 此外边框不会跟网格的边缘严格对齐了。（实际观感还是**不错的**）
 
-![](../../../public/doc/design/watchface/banDS/WF%20v3.png)
+![](../../../public/doc/creation/watchface/banDS/WF%20v3.png)
 
 :::
 
 ::: details 终稿
-![](../../../public/doc/design/watchface/banDS/WF%20v4.png)
+![](../../../public/doc/creation/watchface/banDS/WF%20v4.png)
 
 终于差不多了。。。
 
 此外最下方一行网格还做了**延长**。
 
-![](../../../public/doc/design/watchface/banDS/延伸的一格.png)
+![](../../../public/doc/creation/watchface/banDS/延伸的一格.png)
 
 ::: details 当时给朋友画的解释图
-![alt text](../../../public/doc/design/watchface/banDS/扩大网格.jpg)
+![alt text](../../../public/doc/creation/watchface/banDS/扩大网格.jpg)
 :::
 
 
 最后网格看起来就比较完美了。而且大小网格还能**无缝衔接**，**细看也看不到接缝的程度**。
 
-![alt text](../../../public/doc/design/watchface/banDS/美缝.png)
+![alt text](../../../public/doc/creation/watchface/banDS/美缝.png)
 
 ::: info 为什么没有像原版那样用更大的网格？
 看起来**太怪了**，遂 pass 掉。
 
 ::: details 图
-![alt text](../../../public/doc/design/watchface/banDS/更大的网格.png)
+![alt text](../../../public/doc/creation/watchface/banDS/更大的网格.png)
 :::
 
 ## 卡带
-![alt text](../../../public/doc/design/watchface/banDS/卡带.webp)
+![alt text](../../../public/doc/creation/watchface/banDS/卡带.webp)
 
 以这里为分界线，下方的网格比上面更大一些。原版也是这样的，所以做了这样的效果。
 
@@ -356,7 +356,7 @@ next:
 
 
 ## 底栏
-![alt text](../../../public/doc/design/watchface/banDS/底栏.png)
+![alt text](../../../public/doc/creation/watchface/banDS/底栏.png)
 
 基本保留了原版的样式。
 
@@ -368,9 +368,9 @@ next:
 
 原版的设置按钮是 NDS 的形状。说实话我不明白为啥要这么设计，不过还是照着它画了个手环。
 
-![alt text](../../../public/doc/design/watchface/banDS/设置.webp)
+![alt text](../../../public/doc/creation/watchface/banDS/设置.webp)
 
-![alt text](<../../../public/doc/design/watchface/banDS/设置 手环.webp>)
+![alt text](<../../../public/doc/creation/watchface/banDS/设置 手环.webp>)
 
 时针那里迫不得已用了**混素**，不用混素的话看起来实在是**过于抽象**了。
 
@@ -389,12 +389,12 @@ next:
 正想着怎么设计好，然后看到了 NDS 的闹钟功能：
 
 ::: details 长图 [点击展开]
-![alt text](<../../../public/doc/design/watchface/banDS/NDS 闹钟.webp>)
+![alt text](<../../../public/doc/creation/watchface/banDS/NDS 闹钟.webp>)
 :::
 
 不错，那就这个主题吧（）
 
-![alt text](<../../../public/doc/design/watchface/banDS/AOD 预览图.png>)
+![alt text](<../../../public/doc/creation/watchface/banDS/AOD 预览图.png>)
 
 
 
@@ -459,7 +459,7 @@ BanDS？banDS？
 ![preview0](https://raw.githubusercontent.com/hrsthrt74/banDS-for-astrobox/refs/heads/main/preview0.png)
 
 ::: details 其实想搞一个 Logo 来着
-![alt text](<../../../public/doc/design/watchface/banDS/Logo 初稿.png>)
+![alt text](<../../../public/doc/creation/watchface/banDS/Logo 初稿.png>)
 
 但是**没啥经验**，搞出来的效果**也不是很好**，所以**放弃了**。
 :::
@@ -514,7 +514,7 @@ BanDS？banDS？
 对话框使用了 NDS 的警告样式。
 
 ::: details 点我查看
-![alt text](../../../public/doc/design/watchface/banDS/警告.webp)
+![alt text](../../../public/doc/creation/watchface/banDS/警告.webp)
 :::
 
 不过这里并没有达到**像素完美**。~~我实在是搞不动了（（（~~
@@ -532,7 +532,7 @@ BanDS？banDS？
 随着进入设置层级的**深入**，这个提示也会**叠加多层**。
 
 ::: details 看起来是这样的
-![alt text](../../../public/doc/design/watchface/banDS/设置层级.webp)
+![alt text](../../../public/doc/creation/watchface/banDS/设置层级.webp)
 :::
 
 上面的实机演示图则是觉得**上面太空**，就搞了个**大图**填充上。
@@ -553,13 +553,13 @@ BanDS？banDS？
 - 时钟最开始是用 PS 画的。当时觉得 Figma 画可能不太好用，结果**现实啪啪打脸啊**。。。
 
   ::: details 真香
-  ![alt text](../../../public/doc/design/watchface/banDS/QQ_hhmUNr84X2.png)
+  ![alt text](../../../public/doc/creation/watchface/banDS/QQ_hhmUNr84X2.png)
 
-  ![alt text](../../../public/doc/design/watchface/banDS/QQ_2aa9gLwRcy.png)
+  ![alt text](../../../public/doc/creation/watchface/banDS/QQ_2aa9gLwRcy.png)
   :::
 
 - 制作的时候在纸上写了很多东西，请看图：
-  ![alt text](../../../public/doc/design/watchface/banDS/草稿.jpg)
+  ![alt text](../../../public/doc/creation/watchface/banDS/草稿.jpg)
 
 
 

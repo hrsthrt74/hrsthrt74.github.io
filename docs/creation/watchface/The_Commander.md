@@ -1,11 +1,11 @@
 ---
 prev:
   text: 'PoP☆P'
-  link: 'docs/design/watchface/Pop_star_P'
+  link: 'docs/creation/watchface/Pop_star_P'
 ---
 
 # The Commander
-![](../../../public/doc/design/watchface/the_commander/The%20Commander%20海报%20横版.jpg)
+![](../../../public/doc/creation/watchface/the_commander/The%20Commander%20海报%20横版.jpg)
 ###### 2025/7/6
 我的第一款原创表盘，也是第一款付费的表盘。
 
@@ -41,7 +41,7 @@ prev:
 
 虽然快高考了但还是紧张不起来，反而灵感<u>大发</u>（？）
 
-![The Commander 草稿](../../../public/doc/design/watchface/the_commander/The%20Commander%20草稿.jpg)
+![The Commander 草稿](../../../public/doc/creation/watchface/the_commander/The%20Commander%20草稿.jpg)
 
 但也能注意到，最初版跟最终版的设计有**较大出入**，这个后面再说。
 
@@ -86,7 +86,7 @@ prev:
 
 **第一次做这么大的工程，学到不少，也很累。**（因为跟以往的作品比工作量大了很多）
 
-![Canvas](../../../public/doc/design/watchface/the_commander/The%20Commander%20Canvas.png)
+![Canvas](../../../public/doc/creation/watchface/the_commander/The%20Commander%20Canvas.png)
 
 对于喜欢简洁 ~~懒~~ 的我来说，这确实是个不小的挑战。。。
 
@@ -111,7 +111,7 @@ prev:
 
 做的时候，我看秒数的图标，突然想到——**能不能让他真的转起来**？
 
-![秒针](../../../public/doc/design/watchface/the_commander/second.gif)
+![秒针](../../../public/doc/creation/watchface/the_commander/second.gif)
 
 .....算是一个小彩蛋吧。😂
 
@@ -123,7 +123,7 @@ prev:
 
 ## 海报
 ::: details 横版
-![](../../../public/doc/design/watchface/the_commander/The%20Commander%20海报%20横版.jpg)
+![](../../../public/doc/creation/watchface/the_commander/The%20Commander%20海报%20横版.jpg)
 :::
 简简单单的设计。
 
@@ -135,7 +135,7 @@ prev:
 
 ---
 ::: details 前瞻海报
-![前瞻海报](../../../public/doc/design/watchface/the_commander/The%20Commander%20前瞻海报.jpg)
+![前瞻海报](../../../public/doc/creation/watchface/the_commander/The%20Commander%20前瞻海报.jpg)
 :::
 还做了预热的海报。当时**大多数的制作工作已经完成**，可以预热了。考虑到我自己本身人气也不高，就选择了**只预热 24 小时不到**，然后就发布了。
 
@@ -182,18 +182,18 @@ prev:
 为了上架 AstroBox 还做了海报。
 
 ::: details 海报
-![preview0](../../../public/doc/design/watchface/the_commander/preview0.png)
-![preview1](../../../public/doc/design/watchface/the_commander/preview1.png)
-![preview2](../../../public/doc/design/watchface/the_commander/preview2.png)
-![preview3](../../../public/doc/design/watchface/the_commander/preview3.png)
-![preview4](../../../public/doc/design/watchface/the_commander/preview4.png)
+![preview0](../../../public/doc/creation/watchface/the_commander/preview0.png)
+![preview1](../../../public/doc/creation/watchface/the_commander/preview1.png)
+![preview2](../../../public/doc/creation/watchface/the_commander/preview2.png)
+![preview3](../../../public/doc/creation/watchface/the_commander/preview3.png)
+![preview4](../../../public/doc/creation/watchface/the_commander/preview4.png)
 :::
 
 其中「特点」这一部分仿的是苹果近几年使用的产品特性 lineup 的展示方式——网格。
 
 ::: details 参考
 ![参考](https://appleslides.com/assets/slides/[WWDC%20June%202024]-[Mac]-[macOS%2015].webp)
-![preview1](../../../public/doc/design/watchface/the_commander/preview1.png)
+![preview1](../../../public/doc/creation/watchface/the_commander/preview1.png)
 :::
 
 不少设计都是一拍脑门子想出来的（x）。

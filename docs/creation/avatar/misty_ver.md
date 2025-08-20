@@ -1,6 +1,6 @@
 # Misty Ver.
 
-![Misty Ver. Avatar](<../../../public/doc/design/avatar/hrsthrt74 Misty Ver.jpg>)
+![Misty Ver. Avatar](<../../../public/doc/creation/avatar/hrsthrt74 Misty Ver.jpg>)
 
 ###### 2024/12/21
 
@@ -8,7 +8,7 @@
 本次的头像以 HyperOS 2 的设置页面为主题，并加以改编。
 
 ::: details HyperOS 2 的设置页面是？
-![Screenshot](../../../public/doc/design/assets/HyperOS%202%20Settings.jpg)
+![Screenshot](../../../public/doc/creation/assets/HyperOS%202%20Settings.jpg)
 :::
 
 因为上一版头像已经用了很长时间了（10 个月），也正值 HyperOS 2 发布，很喜欢这个设置界面的 UI，于是做了。
@@ -22,7 +22,7 @@
 背景的渐变是怎么做的呢？其实也很简单，就是四个椭圆，然后再加上模糊滤镜，欸这不就成了（）
 
 ::: details 朴实无华的背景效果
-![Avatar Background](../../../public/doc/design/assets/Text%20Border%20Texture.png)
+![Avatar Background](../../../public/doc/creation/assets/Text%20Border%20Texture.png)
 :::
 
 先做好一张底图，然后前后景就都可以在这张图的基础上改编了。
@@ -35,7 +35,7 @@
 
 ::: details 原来是...？
 **前后景的图片没对齐！！**
-![Avatar DEMO](../../../public/doc/design/avatar/hrsthrt74%20Misty%20Ver%20DEMO.jpg)
+![Avatar DEMO](../../../public/doc/creation/avatar/hrsthrt74%20Misty%20Ver%20DEMO.jpg)
 不过我真觉得还不错欸（小声）
 :::
 
@@ -56,22 +56,22 @@
 ---
 
 # Banner
-![Banner](../../../public/doc/design/avatar/hrsthrt74%20Misty%20Ver%20PROMO.jpg)
+![Banner](../../../public/doc/creation/avatar/hrsthrt74%20Misty%20Ver%20PROMO.jpg)
 本次的 Banner 没有采用传统样式，究其原因不是为了创新，反而是因为把 Banner 的工程迁移到 PS 也是不小的工作量，于是摆烂了。
 
 ---
 
 # 变体
 ### SpaceStation 74th 群头像
-![SpaceStation 74th Icon](../../../public/doc/design/assets/ss74%20Misty%20Ver.jpg)
+![SpaceStation 74th Icon](../../../public/doc/creation/assets/ss74%20Misty%20Ver.jpg)
 完全保持了原头像的模板，仅仅是换个色。
 
 ### 酷安千粉宣传图
-![酷安千粉宣传图](../../../public/doc/design/assets/酷安%20千粉%20宣传图.jpg)
+![酷安千粉宣传图](../../../public/doc/creation/assets/酷安%20千粉%20宣传图.jpg)
 
 ### 徽章（吧唧）
-![Badge Source Image](../../../public/doc/design/assets/hrsthrt74%20Misty%20Ver%20吧唧.png)
+![Badge Source Image](../../../public/doc/creation/assets/hrsthrt74%20Misty%20Ver%20吧唧.png)
 好在背景图够大，足够给徽章的[出血](https://zh.wikipedia.org/wiki/%E5%87%BA%E8%A1%80_(%E5%8D%B0%E5%88%B7))留出地方。
 
 成品在字体填充部分还做了烫银处理，效果非常不错！
-![Badge Photo](../../../public/doc/design/assets/Badge%20Photo.jpg)
+![Badge Photo](../../../public/doc/creation/assets/Badge%20Photo.jpg)
