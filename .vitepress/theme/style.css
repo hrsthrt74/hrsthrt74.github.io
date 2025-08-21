@@ -69,39 +69,33 @@
   --vp-c-danger-3: var(--vp-c-red-3);
   --vp-c-danger-soft: var(--vp-c-red-soft);
 
+  /* 半透明 header 背景颜色 */
   --vp-nav-bg-color: rgba(255, 255, 255, 0.8);
   --vp-local-nav-bg-color: rgba(255, 255, 255, 0.8)
 }
 
-
-
+/* 深色模式下，header 背景颜色 */
 .dark:root {
   --vp-nav-bg-color: rgba(27, 27, 31, 0.8);
   --vp-local-nav-bg-color: rgba(27, 27, 31, 0.8);
 }
 
-
-
-
-
+/* 应用背景模糊效果 */
 .VPNavBar, .VPLocalNav {
-  /* 应用背景模糊效果 */
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px); /* 兼容性支持 */
 }
 
-
 .VPFooter .container p {
-  /* 居中对齐 */
+  /* 靠右对齐 */
   text-align: right; 
 }
 
-
+/* footer 改颜色 */
 .VPFooter .container .message,
 .VPFooter .container .copyright{
   color: var(--vp-c-text-3);
 }
-
 
 
 

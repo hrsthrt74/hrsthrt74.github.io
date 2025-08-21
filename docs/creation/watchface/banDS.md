@@ -1,4 +1,9 @@
 ---
+prev:
+  text: 'WF2'
+  link: 'docs/creation/watchface/WF2'
+
+
 next:
   text: 'authRD'
   link: 'docs/creation/watchface/authRD'
