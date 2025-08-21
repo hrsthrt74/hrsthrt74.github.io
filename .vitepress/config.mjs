@@ -60,8 +60,8 @@ export default defineConfig({
 
     // 页脚
     footer: {
-      message: '除非另有说明，本站内容采用 CC BY-NC-SA 4.0 许可协议发布 / Powered by VitePress',
-      copyright: 'Copyright © 2023-present hrsthrt74'
+      message: '除非另有说明，本站内容采用 CC BY-NC-SA 4.0 许可协议发布',
+      copyright: 'Copyright © 2023-present hrsthrt74 / Powered by VitePress'
     },
 
     // 最后更新于 自定义

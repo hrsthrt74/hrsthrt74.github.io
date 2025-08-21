@@ -68,7 +68,43 @@
   --vp-c-danger-2: var(--vp-c-red-2);
   --vp-c-danger-3: var(--vp-c-red-3);
   --vp-c-danger-soft: var(--vp-c-red-soft);
+
+  --vp-nav-bg-color: rgba(255, 255, 255, 0.8);
+  --vp-local-nav-bg-color: rgba(255, 255, 255, 0.8)
 }
+
+
+
+.dark:root {
+  --vp-nav-bg-color: rgba(27, 27, 31, 0.8);
+  --vp-local-nav-bg-color: rgba(27, 27, 31, 0.8);
+}
+
+
+
+
+
+.VPNavBar, .VPLocalNav {
+  /* 应用背景模糊效果 */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px); /* 兼容性支持 */
+}
+
+
+.VPFooter .container p {
+  /* 居中对齐 */
+  text-align: right; 
+}
+
+
+.VPFooter .container .message,
+.VPFooter .container .copyright{
+  color: var(--vp-c-text-3);
+}
+
+
+
+
 
 /**
  * Component: Button
@@ -136,4 +172,14 @@
 .DocSearch {
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
+
+
+
+
+
+
+
+
+
+
 
