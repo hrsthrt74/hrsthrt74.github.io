@@ -85,6 +85,12 @@ export default defineConfig({
     },
 
     // 深色模式 标签
-    darkModeSwitchLabel: '深色模式'
+    darkModeSwitchLabel: '深色模式',
+
+    outline: {
+      label: '本页目录'
+    },
+
+    returnToTopLabel: '↑ 回到顶部'
   }
 })
