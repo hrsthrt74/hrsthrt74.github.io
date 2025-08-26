@@ -22,7 +22,7 @@ import CountdownTimer from '/.vitepress/theme/components/countdown.vue'
 :::
 
 ::: details VitePress 文档快速跳转
-[Markdown 扩展](https://vitepress.dev/zh/guide/)
+[Markdown 扩展](https://vitepress.dev/zh/guide/markdown)
 
 [站点配置](https://vitepress.dev/zh/reference/site-config)
 :::

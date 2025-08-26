@@ -10,6 +10,7 @@ import './style.css'
 import WFDownloadBtn from '../theme/components/watchface_download_button.vue'
 import Highlight from './components/format/highlight.vue'
 import Color from './components/format/color.vue'
+import Giscus from './components/giscus.vue'
 
 
 
@@ -31,6 +32,7 @@ export default {
     // 在这里导出
     app.component('WFDownloadBtn', WFDownloadBtn);
     app.component('Highlight', Highlight);
-    app.component('Color', Color)
+    app.component('Color', Color);
+    app.component('Giscus', Giscus)
   }
 }
