@@ -42,10 +42,10 @@ const linkUrl = computed(() => { // 也可以把 linkUrl 变成 computed，虽�
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* VitePress默认卡片样式参考 */
   border: 1px solid var(--vp-c-border);
   border-radius: 8px;
   padding: 16px 16px;
+  margin-bottom: 20px;
   background-color: var(--vp-c-bg-soft);
   transition: border-color 0.25s, background-color 0.25s;
   cursor: pointer;
@@ -65,7 +65,7 @@ const linkUrl = computed(() => { // 也可以把 linkUrl 变成 computed，虽�
 }
 
 .card-link-button img {
-  height: 40px; /* 设定固定高度 */
+  height: 36px; /* 设定固定高度 */
   width: auto; /* 宽度自动调整以保持比例 */
   vertical-align: middle;
   margin-left: 8px;
