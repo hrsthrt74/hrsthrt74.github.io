@@ -573,3 +573,7 @@ BanDS？banDS？
 不妨去 AstroBox 下载体验一下😋
 
 <WFDownloadBtn title="banDS" resourceName="banDS" />
+
+## 评论
+
+<Giscus />

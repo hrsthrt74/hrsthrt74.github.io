@@ -271,3 +271,7 @@ auth 和 RD 之间没有空格。一是为了**紧凑**，二是不加空格**�
 不妨去 AstroBox 下载体验一下😋
 
 <WFDownloadBtn title="authRD" resourceName="authRD" />
+
+## 评论
+
+<Giscus />

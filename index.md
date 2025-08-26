@@ -30,3 +30,8 @@ features:
 ## 推荐阅读
 
 （待更新）
+
+## 留言板
+::: details Powered by giscus
+<Giscus />
+:::

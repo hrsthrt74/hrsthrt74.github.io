@@ -137,3 +137,7 @@ next:
 不妨去 AstroBox 下载体验一下😋
 
 <WFDownloadBtn title="PoP☆P" resourceName="PoP☆P" />
+
+## 评论
+
+<Giscus />
