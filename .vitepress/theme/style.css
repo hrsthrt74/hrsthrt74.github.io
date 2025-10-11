@@ -167,7 +167,9 @@
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
-
+img {
+  border-radius: 10px;
+}
 
 
 
