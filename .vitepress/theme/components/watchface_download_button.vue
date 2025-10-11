@@ -70,4 +70,9 @@ const linkUrl = computed(() => { // 也可以把 linkUrl 变成 computed，虽�
   vertical-align: middle;
   margin-left: 8px;
 }
+
+img {
+  border-radius: 0px !important; /* 确保图片圆角不被style.css里的圆角覆盖 */
+}
+
 </style>

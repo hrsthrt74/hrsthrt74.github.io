@@ -122,7 +122,6 @@ const clearInput = () => {
 
 <style scoped>
 .resource-link-generator {
-  padding: 10px;
   border-radius: 8px;
   background-color: rgba(0,0,0,0); /* 如果不在折叠框里的话，可以设置成 --vp-c-bg-soft */
   margin-top: 20px;
