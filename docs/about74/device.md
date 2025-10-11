@@ -12,3 +12,15 @@
 - Samsung Galaxy S3
 - Samsung ????（具体型号忘了）
 - Motorola ????（具体型号忘了）
+
+
+
+
+## 平板
+- REDMI Pad
+
+
+
+
+## 电脑
+- 华硕 天选 6 Pro（R9 8940HX + RTX 5060）
