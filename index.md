@@ -29,7 +29,32 @@ features:
 
 ## 推荐阅读
 
-（待更新）
+<div class="article-cards-container">
+  <ArticleCard
+    image="https://raw.githubusercontent.com/hrsthrt74/WF2-for-astrobox/refs/heads/main/cover.png"
+    link="/docs/creation/watchface/wf2"
+    title="表盘 WF2"
+    description="为啥右边的进度条只留一半"
+  />
+  <ArticleCard
+    image="https://raw.githubusercontent.com/hrsthrt74/banDS-for-astrobox/refs/heads/main/cover.png"
+    link="/docs/creation/watchface/bands"
+    title="表盘 banDS"
+    description="为了还原感觉很 NB 的 NDS UI 而做的表盘"
+  />
+  <ArticleCard
+    image="https://raw.githubusercontent.com/hrsthrt74/authRD-for-astrobox/refs/heads/main/cover.png"
+    link="/docs/creation/watchface/authrd"
+    title="表盘 authRD"
+    description="腕上的赛博通行证 be like"
+  />
+  <ArticleCard
+    image="/index_recommendations/更多.svg"
+    link="/docs/creation/watchface/"
+    title="更多文章"
+    description="施工中，点击跳转到表盘设计历程列表"
+  />
+</div>
 
 ## 留言板
 ::: details Powered by giscus
