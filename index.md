@@ -27,9 +27,15 @@ features:
 如果存在链接打不开 / 打开后为空屏的情况，说明您打开的页面尚未写完，敬请谅解~
 :::
 
-## 推荐阅读
+## 推荐
 
 <div class="article-cards-container">
+  <ArticleCard
+    image="https://raw.githubusercontent.com/hrsthrt74/create_mod_meme_stickers/main/%E5%A4%B4%E5%9B%BE.png"
+    link="https://github.com/hrsthrt74/create_mod_meme_stickers"
+    title="机械动力 MEME 贴纸"
+    description="Ver. 2.0 现已更新"
+  />
   <ArticleCard
     image="https://raw.githubusercontent.com/hrsthrt74/WF2-for-astrobox/refs/heads/main/cover.png"
     link="/docs/creation/watchface/WF2"
