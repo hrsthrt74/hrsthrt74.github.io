@@ -2,6 +2,7 @@
 import AstroBoxResLinkGen from '/.vitepress/theme/components/astrobox_res_link_gen.vue'
 import CountdownTimer from '/.vitepress/theme/components/countdown.vue'
 import IDEditor from '/.vitepress/theme/components/wf_id_editor.vue'
+import UrlEncoder from '/.vitepress/theme/components/url_encoder.vue'
 </script>
 
 
@@ -42,6 +43,13 @@ import IDEditor from '/.vitepress/theme/components/wf_id_editor.vue'
 <AstroBoxResLinkGen />
 
 或者也可以前往 [AstroBooox](https://astrobooox.pages.dev/) 使用更全面的生成器。
+:::
+
+
+
+
+::: details 🔗 URL 编码转换器
+<UrlEncoder />
 :::
 
 
