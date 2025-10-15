@@ -100,7 +100,9 @@ export default defineConfig({
       label: '本页目录'
     },
 
-    returnToTopLabel: '↑ 回到顶部'
+    returnToTopLabel: '↑ 回到顶部',
+
+    externalLinkIcon: true
 
   }
 })
