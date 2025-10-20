@@ -48,21 +48,32 @@ features:
     title="表盘 banDS"
     description="为了还原感觉很 NB 的 NDS UI 而做的表盘"
   />
+</div>
+
+## 最近更新
+
+<div class="article-cards-container">
   <ArticleCard
-    image="https://raw.githubusercontent.com/hrsthrt74/authRD-for-astrobox/refs/heads/main/cover.png"
-    link="/docs/creation/watchface/authRD"
-    title="表盘 authRD"
-    description="腕上的赛博通行证 be like"
+    image="/doc/creation/pic/CUST MC.svg"
+    link=""
+    title="VTuber 风 CUST MC Logo"
+    description="当 MC 社团变得可爱起来"
   />
   <ArticleCard
-    image="/index_recommendations/more.svg"
-    link="/docs/creation/watchface/"
-    title="更多文章"
-    description="施工中，点击跳转到表盘设计历程列表"
+    image="https://raw.githubusercontent.com/hrsthrt74/create_mod_meme_stickers/main/%E5%A4%B4%E5%9B%BE.png"
+    link="https://github.com/hrsthrt74/create_mod_meme_stickers"
+    title="机械动力 MEME 贴纸"
+    description="Ver. 2.0 头图"
+  />
+  <ArticleCard
+    image="/doc/creation/pic/文字背屏壁纸 Pro.png"
+    link=""
+    title="文字背屏壁纸 for Xiaomi 17 Pro"
+    description="网友：比市场部会宣传"
   />
 </div>
 
 ## 留言板
-::: details Powered by giscus
+::: info Powered by giscus
 <Giscus />
 :::

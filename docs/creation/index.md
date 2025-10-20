@@ -3,6 +3,8 @@
 
 ---
 
+[![Header](../../public/header_pic/杂图.svg)](../creation/pic/index.md)
+
 [![Header](../../public/header_pic/表盘.svg)](../creation/watchface/index.md)
 
 [![Header](../../public/header_pic/周边.svg)](../creation/goods/index.md)
@@ -14,7 +16,7 @@
 
 
 
-
+---
 
 ::: details 归档
 以往的作品，但是现已不再更新或者已过时。
@@ -27,5 +29,6 @@
 
 
 
+---
 
-- [博客更新日志](../creation/blog/index.md)
+[![Header](../../public/header_pic/仪表盘%20入口.svg)](../creation/blog/dashboard.md)

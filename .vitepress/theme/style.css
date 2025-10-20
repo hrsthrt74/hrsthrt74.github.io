@@ -171,16 +171,16 @@ img {
   border-radius: 10px;
 }
 
-/* 首页特定样式：将 img 标签圆角设置为 0px */
-.VPHome img {
-  border-radius: 0px;
-}
-
 
 
 
 /* ArticleCard 响应式布局样式 */
 .article-cards-container {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr; /* 默认单列 */
+}
+.article-cards-container-doc {
   display: grid;
   gap: 16px;
   grid-template-columns: 1fr; /* 默认单列 */
@@ -192,20 +192,54 @@ img {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
+
+  .article-cards-container-doc {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
 }
 
-/* 三列布局 - 桌面设备 */
+/* 桌面设备 */
 @media (min-width: 1025px) {
+
+  /* home里三列 */
   .article-cards-container {
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
   }
-}
 
-/* 四列布局 - 大屏设备 */
-@media (min-width: 1440px) {
-  .article-cards-container {
-    grid-template-columns: repeat(4, 1fr);
+  /* doc里2列 */
+  .article-cards-container-doc {
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
 }
+
+/* 大屏设备 */
+@media (min-width: 1440px) {
+
+  /* home里3列 */
+  .article-cards-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  /* doc里2列，要不太挤 */
+  .article-cards-container-doc {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+
+
+
+/* ArticleCard 图片去圆角 */
+.article-cards-container img {
+  border-radius: 0;
+}
+
+.article-cards-container-doc img {
+  border-radius: 0;
+}
+
