@@ -1,8 +1,16 @@
+---
+
+layout: home
+
+---
+
+<p></p>
+
 # Logo · 杂图 · 小设计
 
 ---
 
-<div class="article-cards-container-doc">
+<div class="article-cards-container">
   <ArticleCard
     image="/doc/creation/pic/CUST MC.svg"
     link=""
