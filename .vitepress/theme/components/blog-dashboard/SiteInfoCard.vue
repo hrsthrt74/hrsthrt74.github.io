@@ -47,12 +47,20 @@ onUnmounted(() => {
 .site-info-card {
   width: 100%;
   height: 100%;
-  border-radius: 8px;
+  border-radius: 8px; /* fallback: 不支持平滑圆角的浏览器 */
   overflow: hidden;
   background: var(--vp-c-bg-soft);
   border: 1px solid var(--vp-c-border);
   padding: 16px;
   box-sizing: border-box;
+}
+
+/* 平滑圆角支持 - Chrome 144+ */
+@supports (corner-shape: squircle) {
+  .site-info-card {
+    border-radius: 16px; /* 平滑圆角需要约2倍半径 (8px * 2) */
+    corner-shape: squircle;
+  }
 }
 
 .content {

@@ -49,11 +49,19 @@ defineProps({
   text-decoration: none;
   color: inherit;
   height: 100%;
-  border-radius: 8px;
+  border-radius: 8px; /* fallback: 不支持平滑圆角的浏览器 */
   overflow: hidden;
   background: var(--vp-c-bg-soft);
   border: 1px solid var(--vp-c-border);
   transition: all 0.25s ease;
+}
+
+/* 平滑圆角支持 - 需要 Chrome 144+ */
+@supports (corner-shape: squircle) {
+  .card-link {
+    border-radius: 16px; /* 平滑圆角需要约2倍半径 (8px * 2) */
+    corner-shape: squircle;
+  }
 }
 
 .card-link:hover {

@@ -117,12 +117,20 @@ const clearInput = () => {
 
 <style scoped>
 .url-encoder {
-  border-radius: 8px;
+  border-radius: 8px; /* fallback: 不支持平滑圆角 */
   background-color: rgba(0,0,0,0);
   margin-top: 20px;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* 平滑圆角支持 - Chrome 144+ */
+@supports (corner-shape: squircle) {
+  .url-encoder {
+    border-radius: 16px; /* 平滑圆角需要约2倍半径 (8px * 2) */
+    corner-shape: squircle;
+  }
 }
 
 .input-section {
@@ -140,7 +148,7 @@ label {
 textarea {
   padding: 12px;
   border: 1px solid var(--vp-c-border);
-  border-radius: 6px;
+  border-radius: 6px; /* fallback: 不支持平滑圆角的浏览器 */
   font-size: 1rem;
   color: var(--vp-c-text-1);
   background-color: var(--vp-c-bg);
@@ -149,6 +157,14 @@ textarea {
   resize: vertical;
   font-family: inherit;
   line-height: 1.5;
+}
+
+/* 平滑圆角 - Chrome 144+ */
+@supports (corner-shape: squircle) {
+  textarea {
+    border-radius: 12px; /* 平滑圆角需要约2倍半径 (6px * 2) */
+    corner-shape: squircle;
+  }
 }
 
 textarea:focus {
@@ -169,12 +185,20 @@ button {
   justify-content: center;
   padding: 8px 16px;
   border: none;
-  border-radius: 6px;
+  border-radius: 6px; /* fallback 圆角 */
   cursor: pointer;
   font-size: 0.9rem;
   font-weight: 500;
   transition: background-color 0.2s, opacity 0.2s;
   min-width: 80px;
+}
+
+/* 平滑圆角 - Chrome 144+ */
+@supports (corner-shape: squircle) {
+  button {
+    border-radius: 12px; /* 平滑圆角需要约2倍半径 (6px * 2) */
+    corner-shape: squircle;
+  }
 }
 
 .clear-button {
@@ -199,8 +223,16 @@ button {
   padding: 15px;
   background-color: var(--vp-c-bg);
   border: 2px solid var(--vp-c-divider);
-  border-radius: 6px;
+  border-radius: 6px; /* fallback 圆角 */
   transition: all 0.2s ease;
+}
+
+/* 平滑圆角 - Chrome 144+ */
+@supports (corner-shape: squircle) {
+  .output-section {
+    border-radius: 12px; /* 平滑圆角需要约2倍半径 (6px * 2) */
+    corner-shape: squircle;
+  }
 }
 
 .output-section.has-content {
@@ -234,8 +266,16 @@ button {
   font-size: 0.95rem;
   /* padding: 8px; */
   /* background-color: var(--vp-c-bg); */
-  border-radius: 4px;
+  border-radius: 3px; /* fallback: 小圆角 */
   border: 1px solid var(--vp-c-divider-light);
+}
+
+/* 平滑圆角 - Chrome 144+ */
+@supports (corner-shape: squircle) {
+  .result-text {
+    border-radius: 6px; /* 平滑圆角需要约2倍半径 (3px * 2) */
+    corner-shape: squircle;
+  }
 }
 
 .placeholder-text {

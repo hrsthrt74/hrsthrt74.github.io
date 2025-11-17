@@ -122,12 +122,20 @@ const clearInput = () => {
 
 <style scoped>
 .resource-link-generator {
-  border-radius: 8px;
+  border-radius: 8px; /* fallback: 不支持平滑圆角的浏览器 */
   background-color: rgba(0,0,0,0); /* 如果不在折叠框里的话，可以设置成 --vp-c-bg-soft */
   margin-top: 20px;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* 平滑圆角支持 - Chrome 144+ */
+@supports (corner-shape: squircle) {
+  .resource-link-generator {
+    border-radius: 16px; /* 平滑圆角需要约2倍半径 (8px * 2) */
+    corner-shape: squircle;
+  }
 }
 
 h3 {
@@ -158,12 +166,20 @@ input {
   flex-grow: 1; /* 让输入框填充剩余空间 */
   padding: 10px 12px;
   border: 1px solid var(--vp-c-border);
-  border-radius: 6px;
+  border-radius: 6px; /* fallback 圆角 */
   font-size: 1rem;
   color: var(--vp-c-text-1);
   background-color: var(--vp-c-bg);
   box-shadow: var(--vp-shadow-1);
   transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* 平滑圆角 - Chrome 144+ */
+@supports (corner-shape: squircle) {
+  input {
+    border-radius: 12px; /* 平滑圆角需要约2倍半径 (6px * 2) */
+    corner-shape: squircle;
+  }
 }
 
 input:focus {
@@ -186,12 +202,20 @@ button {
   background-color: var(--vp-button-brand-bg);
   color: var(--vp-button-brand-text);
   border: none;
-  border-radius: 6px;
+  border-radius: 6px; /* fallback 圆角 */
   cursor: pointer;
   font-size: 1rem;
   font-weight: 500;
   transition: background-color 0.2s, opacity 0.2s;
   min-width: 100px; /* 避免文本变化时按钮大小跳动 */
+}
+
+/* 平滑圆角 - Chrome 144+ */
+@supports (corner-shape: squircle) {
+  button {
+    border-radius: 12px; /* 平滑圆角需要约2倍半径 (6px * 2) */
+    corner-shape: squircle;
+  }
 }
 
 .clear-button {
@@ -235,8 +259,16 @@ button:disabled {
   padding: 15px;
   background-color: var(--vp-c-bg-soft);
   border: 1px dashed var(--vp-c-divider);
-  border-radius: 6px;
+  border-radius: 6px; /* fallback 圆角 */
   word-break: break-all; /* 防止长链接溢出 */
+}
+
+/* 平滑圆角 - Chrome 144+ */
+@supports (corner-shape: squircle) {
+  .output-section {
+    border-radius: 12px; /* 平滑圆角需要约2倍半径 (6px * 2) */
+    corner-shape: squircle;
+  }
 }
 
 .output-section h4 {

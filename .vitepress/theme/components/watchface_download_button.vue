@@ -43,7 +43,7 @@ const linkUrl = computed(() => { // 也可以把 linkUrl 变成 computed，虽�
   justify-content: space-between;
   align-items: center;
   border: 1px solid var(--vp-c-border);
-  border-radius: 8px;
+  border-radius: 8px; /* fallback: 不支持平滑圆角的浏览器 */
   padding: 16px 16px;
   margin-bottom: 20px;
   background-color: var(--vp-c-bg-soft);
@@ -51,6 +51,14 @@ const linkUrl = computed(() => { // 也可以把 linkUrl 变成 computed，虽�
   cursor: pointer;
   text-decoration: none;
   color: inherit;
+}
+
+/* 平滑圆角支持 - Chrome 144+ */
+@supports (corner-shape: squircle) {
+  .card-link-container {
+    border-radius: 16px; /* 平滑圆角需要约2倍半径 (8px * 2) */
+    corner-shape: squircle;
+  }
 }
 
 .card-link-container:hover {

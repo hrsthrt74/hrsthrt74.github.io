@@ -82,8 +82,8 @@
 
 /* 应用背景模糊效果 */
 .VPNavBar, .VPLocalNav {
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px); /* 兼容性支持 */
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px); /* 兼容性支持 */
 }
 
 .VPFooter .container p {
@@ -167,8 +167,30 @@
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
+/* 图片圆角：不支持平滑圆角时使用原始半径，支持时使用2倍半径+平滑效果 */
 img {
   border-radius: 10px;
+}
+
+/* 平滑圆角支持 - 需要 Chrome 144+ */
+@supports (corner-shape: squircle) {
+  img {
+    border-radius: 20px; /* 平滑圆角需要约2倍半径以保持视觉一致 (10px * 2) */
+    corner-shape: squircle;
+  }
+}
+
+/* iframe圆角：不支持平滑圆角时使用原始半径，支持时使用2倍半径+平滑效果 */
+iframe {
+  border-radius: 10px;
+}
+
+/* 平滑圆角支持 - 需要 Chrome 144+ */
+@supports (corner-shape: squircle) {
+  iframe {
+    border-radius: 20px; /* 平滑圆角需要约2倍半径以保持视觉一致 (10px * 2) */
+    corner-shape: squircle;
+  }
 }
 
 
@@ -241,5 +263,182 @@ img {
 
 .article-cards-container-doc img {
   border-radius: 0;
+}
+
+
+/* ============================================
+ * VitePress 默认组件平滑圆角支持
+ * ============================================ */
+
+/* 按钮组件 */
+.vp-button,
+.VPButton {
+  border-radius: 20px; /* VitePress 默认按钮圆角 */
+}
+
+@supports (corner-shape: squircle) {
+  .vp-button,
+  .VPButton {
+    border-radius: 40px; /* 平滑圆角 2倍半径 (20px * 2) */
+    corner-shape: squircle;
+  }
+}
+
+/* 代码块 */
+div[class*='language-'],
+.vp-code-group .tabs,
+pre {
+  border-radius: 8px; /* VitePress 默认代码块圆角 */
+}
+
+@supports (corner-shape: squircle) {
+  div[class*='language-'],
+  .vp-code-group .tabs,
+  pre {
+    border-radius: 16px; /* 平滑圆角 2倍半径 (8px * 2) */
+    corner-shape: squircle;
+  }
+}
+
+/* 行内代码 */
+code:not(pre code) {
+  border-radius: 4px; /* VitePress 默认行内代码圆角 */
+}
+
+@supports (corner-shape: squircle) {
+  code:not(pre code) {
+    border-radius: 8px; /* 平滑圆角 2倍半径 (4px * 2) */
+    corner-shape: squircle;
+  }
+}
+
+/* 自定义容器 (tip, warning, danger, details 等) */
+.vp-doc .custom-block,
+.custom-block {
+  border-radius: 8px; /* VitePress 默认容器圆角 */
+}
+
+@supports (corner-shape: squircle) {
+  .vp-doc .custom-block,
+  .custom-block {
+    border-radius: 16px; /* 平滑圆角 2倍半径 (8px * 2) */
+    corner-shape: squircle;
+  }
+}
+
+/* 搜索框 */
+.VPNavBarSearch .DocSearch-Button,
+.DocSearch-Button {
+  border-radius: 8px; /* VitePress 默认搜索框圆角 */
+}
+
+@supports (corner-shape: squircle) {
+  .VPNavBarSearch .DocSearch-Button,
+  .DocSearch-Button {
+    border-radius: 16px; /* 平滑圆角 2倍半径 (8px * 2) */
+    corner-shape: squircle;
+  }
+}
+
+/* 侧边栏和导航项 */
+.VPSidebarItem .link,
+.VPNavBarMenuLink,
+.VPSocialLink {
+  border-radius: 6px; /* VitePress 默认导航项圆角 */
+}
+
+@supports (corner-shape: squircle) {
+  .VPSidebarItem .link,
+  .VPNavBarMenuLink,
+  .VPSocialLink {
+    border-radius: 12px; /* 平滑圆角 2倍半径 (6px * 2) */
+    corner-shape: squircle;
+  }
+}
+
+/* 徽章 (Badge) */
+.VPBadge {
+  border-radius: 12px; /* VitePress 默认徽章圆角 */
+}
+
+@supports (corner-shape: squircle) {
+  .VPBadge {
+    border-radius: 24px; /* 平滑圆角 2倍半径 (12px * 2) */
+    corner-shape: squircle;
+  }
+}
+
+/* 卡片组件 */
+.VPFeature,
+.VPHomeFeatures .box {
+  border-radius: 12px; /* VitePress 默认特性卡片圆角 */
+}
+
+@supports (corner-shape: squircle) {
+  .VPFeature,
+  .VPHomeFeatures .box {
+    border-radius: 24px; /* 平滑圆角 2倍半径 (12px * 2) */
+    corner-shape: squircle;
+  }
+}
+
+/* 输入框 */
+input[type="text"],
+input[type="search"],
+.VPNavBarSearch input {
+  border-radius: 6px; /* VitePress 默认输入框圆角 */
+}
+
+@supports (corner-shape: squircle) {
+  input[type="text"],
+  input[type="search"],
+  .VPNavBarSearch input {
+    border-radius: 12px; /* 平滑圆角 2倍半径 (6px * 2) */
+    corner-shape: squircle;
+  }
+}
+
+/* 分页器 */
+.VPDocFooter .pager-link {
+  border-radius: 8px; /* VitePress 默认分页器圆角 */
+}
+
+@supports (corner-shape: squircle) {
+  .VPDocFooter .pager-link {
+    border-radius: 16px; /* 平滑圆角 2倍半径 (8px * 2) */
+    corner-shape: squircle;
+  }
+}
+
+/* 团队成员卡片 */
+.VPTeamMembers .profile,
+.VPTeamMembersItem {
+  border-radius: 12px; /* VitePress 默认团队成员卡片圆角 */
+}
+
+@supports (corner-shape: squircle) {
+  .VPTeamMembers .profile,
+  .VPTeamMembersItem {
+    border-radius: 24px; /* 平滑圆角 2倍半径 (12px * 2) */
+    corner-shape: squircle;
+  }
+}
+
+/* 头像 */
+.VPTeamMembers .avatar,
+.vp-doc img.avatar {
+  border-radius: 50%; /* 圆形头像保持不变 */
+}
+
+/* 表格 */
+.vp-doc table {
+  border-radius: 8px; /* VitePress 默认表格圆角 */
+}
+
+@supports (corner-shape: squircle) {
+  .vp-doc table {
+    border-radius: 16px; /* 平滑圆角 2倍半径 (8px * 2) */
+    corner-shape: squircle;
+  }
 }
 

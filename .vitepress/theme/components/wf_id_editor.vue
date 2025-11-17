@@ -316,12 +316,21 @@ input[type="file"] {
   width: 100%;
   padding: 0.6rem 0.8rem;
   border: 1px solid var(--vp-c-divider);
-  border-radius: 6px;
+  border-radius: 6px; /* fallback: 不支持平滑圆角的浏览器 */
   background-color: var(--vp-c-bg);
   color: var(--vp-c-text-1);
   font-size: 1rem;
   box-sizing: border-box;
   transition: border-color 0.2s, background-color 0.2s;
+}
+
+/* 平滑圆角支持 - Chrome 144+ */
+@supports (corner-shape: squircle) {
+  .vp-input,
+  input[type="file"] {
+    border-radius: 12px; /* 平滑圆角需要约2倍半径 (6px * 2) */
+    corner-shape: squircle;
+  }
 }
 
 .vp-input:focus {
@@ -334,13 +343,21 @@ input[type="file"] {
 .vp-button {
   display: inline-block;
   padding: 0.5rem 1.5rem;
-  border-radius: 20px;
+  border-radius: 20px; /* fallback: 不支持平滑圆角的浏览器 */
   font-weight: 500;
   background-color: var(--vp-c-brand-2);
   color: var(--vp-c-white);
   cursor: pointer;
   transition: background-color 0.25s, border-color 0.25s;
   margin-bottom: 0.5rem;
+}
+
+/* 平滑圆角支持 - Chrome 144+ */
+@supports (corner-shape: squircle) {
+  .vp-button {
+    border-radius: 40px; /* 平滑圆角需要约2倍半径 (20px * 2) */
+    corner-shape: squircle;
+  }
 }
 
 .vp-button:hover:not(:disabled) {
