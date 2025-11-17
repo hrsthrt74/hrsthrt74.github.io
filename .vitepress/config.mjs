@@ -102,7 +102,12 @@ export default defineConfig({
 
     returnToTopLabel: '↑ 回到顶部',
 
-    externalLinkIcon: true
+    externalLinkIcon: true,
+
+    editLink: {
+      pattern: 'https://github.com/hrsthrt74/hrsthrt74.github.io/edit/main/docs/:path',
+      text: '编辑此页'
+    }
 
   }
 })
