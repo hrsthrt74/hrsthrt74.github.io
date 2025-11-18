@@ -105,7 +105,7 @@ export default defineConfig({
     externalLinkIcon: true,
 
     editLink: {
-      pattern: 'https://github.com/hrsthrt74/hrsthrt74.github.io/edit/main/docs/:path',
+      pattern: 'https://github.com/hrsthrt74/hrsthrt74.github.io/edit/main/:path',
       text: '编辑此页'
     }
 
