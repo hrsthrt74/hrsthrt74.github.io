@@ -14,7 +14,7 @@
 /* 平滑圆角支持 - Chrome 144+ */
 @supports (corner-shape: squircle) {
   .highlight {
-    border-radius: 6px; /* 平滑圆角需要约2倍半径 (3px * 2) */
+    border-radius: 15px; /* 平滑圆角 */
     corner-shape: squircle;
   }
 }

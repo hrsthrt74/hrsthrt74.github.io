@@ -49,16 +49,15 @@ onUnmounted(() => {
   height: 100%;
   border-radius: 8px; /* fallback: 不支持平滑圆角的浏览器 */
   overflow: hidden;
-  background: var(--vp-c-bg-soft);
-  border: 1px solid var(--vp-c-border);
+  background: var(--vp-custom-block-info-bg);
   padding: 16px;
   box-sizing: border-box;
 }
 
-/* 平滑圆角支持 - Chrome 144+ */
+/* 平滑圆角支持 - Chrome 139+ */
 @supports (corner-shape: squircle) {
   .site-info-card {
-    border-radius: 16px; /* 平滑圆角需要约2倍半径 (8px * 2) */
+    border-radius: 28px; /* 平滑圆角 */
     corner-shape: squircle;
   }
 }
@@ -87,9 +86,4 @@ onUnmounted(() => {
   letter-spacing: 0.5px;
 }
 
-/* 暗色模式适配 */
-html.dark .site-info-card {
-  background: var(--vp-c-bg-alt);
-  border-color: var(--vp-c-divider);
-}
 </style>

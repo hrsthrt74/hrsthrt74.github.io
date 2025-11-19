@@ -57,7 +57,7 @@
     <div 
       class="gemini"
       style="margin-top: 2.2rem; margin-bottom: -2.4rem; margin-right: 0.5rem; text-align: end; color: var(--vp-c-text-3);">
-      <p>Component written by Google Gemini</p>
+      <p>Written by Gemini</p>
     </div>
 
 

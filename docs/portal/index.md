@@ -7,26 +7,23 @@ import UrlEncoder from '/.vitepress/theme/components/url_encoder.vue'
 
 
 ![Header](../../public/header_pic/传送门.svg)
+
 一些有用的工具 or 信息。
 
----
 
 
 
-
-::: tip 📂 Clipboard 74th
-| 描述 | 内容 |
-| ---- | ---- |
-| 直角括号 | 「」 |
-| 重点号   |  ※  |
-:::
+## 小工具
 
 
 
 
 ::: details ⌚ 米环预览图生成器
-`https://miband.zaona.top/` by [Zaona](https://github.com/zaona)
+[miband.zaona.top](https://miband.zaona.top/) by [Zaona](https://github.com/zaona)
+
 <iframe src="https://miband.zaona.top/" width="500" height="1040" frameborder="0" loading="lazy"></iframe>
+
+<p></p>
 :::
 
 
@@ -56,8 +53,18 @@ import UrlEncoder from '/.vitepress/theme/components/url_encoder.vue'
 
 
 ::: details How old is Minecraft 1.7.10 Today?
+
+<p></p>
+
 <CountdownTimer targetDate="2014-06-26T12:00:00" />
+
+<p></p>
 :::
+
+
+
+
+## 组件示例
 
 
 

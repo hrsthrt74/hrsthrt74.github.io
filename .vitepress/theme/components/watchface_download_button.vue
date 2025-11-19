@@ -53,10 +53,10 @@ const linkUrl = computed(() => { // 也可以把 linkUrl 变成 computed，虽�
   color: inherit;
 }
 
-/* 平滑圆角支持 - Chrome 144+ */
+/* 平滑圆角支持 - Chrome 139+ */
 @supports (corner-shape: squircle) {
   .card-link-container {
-    border-radius: 16px; /* 平滑圆角需要约2倍半径 (8px * 2) */
+    border-radius: 28px; /* 平滑圆角 */
     corner-shape: squircle;
   }
 }

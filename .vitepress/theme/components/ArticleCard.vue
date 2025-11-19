@@ -56,10 +56,10 @@ defineProps({
   transition: all 0.25s ease;
 }
 
-/* 平滑圆角支持 - 需要 Chrome 144+ */
+/* 平滑圆角支持 - 需要 Chrome 139+ */
 @supports (corner-shape: squircle) {
   .card-link {
-    border-radius: 16px; /* 平滑圆角需要约2倍半径 (8px * 2) */
+    border-radius: 28px; /* 平滑圆角 */
     corner-shape: squircle;
   }
 }
