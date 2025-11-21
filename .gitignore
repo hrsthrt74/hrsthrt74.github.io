@@ -10,3 +10,5 @@ desktop.ini
 
 # 申必文件，只有上帝知道它是啥，为了不让它出现在版本控制里，忽略它
 .hintrc
+
+node_modules
