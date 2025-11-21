@@ -1,3 +1,4 @@
+42
 import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
@@ -83,7 +84,29 @@ export default defineConfig({
 
     // 搜索
     search: {
-      provider: 'local'
+      provider: 'local',
+      options: {
+        translations: {
+          button: {
+            buttonText: '搜索',
+            buttonAriaLabel: '搜索'
+          },
+          modal: {
+            searchBoxPlaceholder: '搜索...',
+            resetButtonTitle: '清除查询条件',
+            closeButtonAriaLabel: '关闭搜索',
+            noResultsText: '无法找到相关结果：',
+            footer: {
+              selectText: '跳转到结果',
+              selectTextAriaLabel: '跳转到结果',
+              navigateText: '导航',
+              navigateTextAriaLabel: '导航到结果',
+              closeText: '关闭',
+              closeTextAriaLabel: '关闭搜索对话框'
+            }
+          }
+        }
+      }
     },
 
     // 翻页 自定义文字
