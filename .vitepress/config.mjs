@@ -1,4 +1,3 @@
-42
 import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
