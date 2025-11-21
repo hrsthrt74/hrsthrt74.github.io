@@ -73,8 +73,9 @@ features:
   />
 </div>
 
-## 留言板
-::: info Powered by giscus
+---
+
+::: info 留言板
 <Giscus />
 <p></p>
 :::
