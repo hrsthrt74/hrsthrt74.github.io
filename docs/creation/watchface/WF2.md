@@ -16,7 +16,7 @@ next:
 ##### 8th Watchface / 2025/8/16
 「变成『2』，~~一切都是新的~~。」
 
-<Color color="var(--vp-c-text-2)">* 本句出自 Nintendo Switch 2 的宣传语。</Color>
+<span style="color: var(--vp-c-text-2);">* 本句出自 Nintendo Switch 2 的宣传语。</span>
 
 
 
@@ -107,7 +107,7 @@ NS2 的 UI 虽然大体上延续了 NS1 的设计风格，但细节上**变化�
 
 观看方向上，大多数情况下，NS2 是**横屏**的，手环是**竖屏**。
 
-<Highlight>NS2 可以把软件一口气地**横向排列**在屏幕上，可是手环呢？</Highlight>
+<mark>NS2 可以把软件一口气地**横向排列**在屏幕上，可是手环呢？</mark>
 
 为了让元素不至于小到**看不清**，就只能放下 1.5 个图标了。
 
@@ -244,7 +244,7 @@ Logo 的颜色则特意**压暗了**，尽量让它成为**装饰**，不要干�
 
 ![](https://www.nintendo.co.jp/hardware/3dsseries/activitylog/img/img_console02.png)
 
-<Highlight>于是就回归了**经典的**进度条样式。</Highlight>
+<mark>于是就回归了**经典的**进度条样式。</mark>
 
 ...
 
@@ -267,7 +267,7 @@ Logo 的颜色则特意**压暗了**，尽量让它成为**装饰**，不要干�
 
 
 ### 小爱同学
-放这个是为了跟 Nintendo Switch Online 的图标对应上，<Highlight>于是用了有颜色的背景。</Highlight>
+放这个是为了跟 Nintendo Switch Online 的图标对应上，<mark>于是用了有颜色的背景。</mark>
 
 从一开始就打算用的是选框的**四色渐变**做背景，做好后才反应过来——跟超级小爱的主题色**也挺像嘛~**
 
@@ -376,7 +376,7 @@ NS 也是这样的。
 
 整体上参考了 NS2 的卡带包装盒和 eShop 上 NS2 游戏的**横幅样式**。
 
-虽然这个红色大额头设计丑得跟 New 3DS Only 的卡带包装**有过之而不不及**，但为了**还原**设计，只好这么干了（）
+虽然这个红色大额头设计丑得跟 New 3DS Only 的卡带包装**有过之而无不及**，但为了**还原**设计，只好这么干了（）
 
 
 
