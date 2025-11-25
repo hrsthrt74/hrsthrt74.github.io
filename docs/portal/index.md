@@ -1,8 +1,8 @@
 <script setup>
-import AstroBoxResLinkGen from '/.vitepress/theme/components/astrobox_res_link_gen.vue'
-import CountdownTimer from '/.vitepress/theme/components/countdown.vue'
-import IDEditor from '/.vitepress/theme/components/wf_id_editor.vue'
-import UrlEncoder from '/.vitepress/theme/components/url_encoder.vue'
+import AstroBoxResLinkGen from '/.vitepress/theme/components/AstroboxResLinkGen.vue'
+import CountdownTimer from '/.vitepress/theme/components/Countdown.vue'
+import IDEditor from '/.vitepress/theme/components/WfIdEditor.vue'
+import UrlEncoder from '/.vitepress/theme/components/UrlEncoder.vue'
 </script>
 
 
