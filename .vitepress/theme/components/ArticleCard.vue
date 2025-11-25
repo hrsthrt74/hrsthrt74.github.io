@@ -57,10 +57,10 @@ defineProps({
 }
 
 /* 平滑圆角支持 - 需要 Chrome 139+ */
-@supports (corner-shape: squircle) {
+@supports (corner-shape: superellipse(1.5)) {
   .card-link {
-    border-radius: 28px; /* 平滑圆角 */
-    corner-shape: squircle;
+    border-radius: 20px; /* 平滑圆角 */
+    corner-shape: superellipse(1.5);
   }
 }
 

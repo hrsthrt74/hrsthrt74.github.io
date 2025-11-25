@@ -325,11 +325,11 @@ input[type="file"] {
 }
 
 /* 平滑圆角支持 - Chrome 144+ */
-@supports (corner-shape: squircle) {
+@supports (corner-shape: superellipse(1.5)) {
   .vp-input,
   input[type="file"] {
-    border-radius: 12px; /* 平滑圆角需要约2倍半径 (6px * 2) */
-    corner-shape: squircle;
+    border-radius: 12px; /* 平滑圆角 */
+    corner-shape: superellipse(1.5);
   }
 }
 
@@ -353,10 +353,10 @@ input[type="file"] {
 }
 
 /* 平滑圆角支持 - Chrome 144+ */
-@supports (corner-shape: squircle) {
+@supports (corner-shape: superellipse(1.5)) {
   .vp-button {
     border-radius: 40px; /* 平滑圆角需要约2倍半径 (20px * 2) */
-    corner-shape: squircle;
+    corner-shape: superellipse(1.5);
   }
 }
 

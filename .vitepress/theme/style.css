@@ -173,10 +173,10 @@ img {
 }
 
 /* 平滑圆角支持 - 需要 Chrome 139+ */
-@supports (corner-shape: squircle) {
+@supports (corner-shape: superellipse(1.5)) {
   img {
-    border-radius: 28px; /* 平滑圆角 */
-    corner-shape: squircle;
+    border-radius: 20px; /* 平滑圆角 */
+    corner-shape: superellipse(1.5);
   }
 }
 
@@ -186,10 +186,10 @@ iframe {
 }
 
 /* 平滑圆角支持 - 需要 Chrome 139+ */
-@supports (corner-shape: squircle) {
+@supports (corner-shape: superellipse(1.5)) {
   iframe {
-    border-radius: 28px; /* 平滑圆角 */
-    corner-shape: squircle;
+    border-radius: 20px; /* 平滑圆角 */
+    corner-shape: superellipse(1.5);
   }
 }
 
@@ -265,6 +265,22 @@ iframe {
   border-radius: 0;
 }
 
+/* 高亮标记 */
+mark {
+  background-color: rgba(255, 217, 5, 0.2); /* 你可以自定义颜色 */
+  padding: 2px 4px;
+  border-radius: 3px; /* fallback: 旧浏览器小圆角 */
+}
+
+@supports (corner-shape: superellipse(1.5)) {
+  mark {
+    border-radius: 10px; /* 平滑圆角 */
+    corner-shape: superellipse(1.5);
+  }
+}
+
+
+
 
 /* ===================================================================
  * VitePress 默认组件平滑圆角支持
@@ -276,11 +292,11 @@ iframe {
   border-radius: 20px; /* VitePress 默认按钮圆角 */
 }
 
-@supports (corner-shape: squircle) {
+@supports (corner-shape: superellipse(1.5)) {
   .vp-button,
   .VPButton {
     border-radius: 40px; /* 平滑圆角 2倍半径 (20px * 2) */
-    corner-shape: squircle;
+    corner-shape: superellipse(1.5);
   }
 }
 
@@ -291,12 +307,12 @@ pre {
   border-radius: 8px; /* VitePress 默认代码块圆角 */
 }
 
-@supports (corner-shape: squircle) {
+@supports (corner-shape: superellipse(1.5)) {
   div[class*='language-'],
   .vp-code-group .tabs,
   pre {
     border-radius: 16px; /* 平滑圆角 2倍半径 (8px * 2) */
-    corner-shape: squircle;
+    corner-shape: superellipse(1.5);
   }
 }
 
@@ -305,10 +321,10 @@ code:not(pre code) {
   border-radius: 4px; /* VitePress 默认行内代码圆角 */
 }
 
-@supports (corner-shape: squircle) {
+@supports (corner-shape: superellipse(1.5)) {
   code:not(pre code) {
     border-radius: 8px; /* 平滑圆角 2倍半径 (4px * 2) */
-    corner-shape: squircle;
+    corner-shape: superellipse(1.5);
   }
 }
 
@@ -318,11 +334,11 @@ code:not(pre code) {
   border-radius: 8px; /* VitePress 默认容器圆角 */
 }
 
-@supports (corner-shape: squircle) {
+@supports (corner-shape: superellipse(1.5)) {
   .vp-doc .custom-block,
   .custom-block {
-    border-radius: 28px; /* 支持平滑圆角的情况下，用更大的圆角，因为好看😝 */
-    corner-shape: squircle;
+    border-radius: 20px; /* 支持平滑圆角的情况下，用更大的圆角，因为好看😝 */
+    corner-shape: superellipse(1.5);
   }
 }
 
@@ -332,11 +348,11 @@ code:not(pre code) {
   border-radius: 8px; /* VitePress 默认搜索框圆角 */
 }
 
-@supports (corner-shape: squircle) {
+@supports (corner-shape: superellipse(1.5)) {
   .VPNavBarSearch .DocSearch-Button,
   .DocSearch-Button {
     border-radius: 16px; /* 平滑圆角 2倍半径 (8px * 2) */
-    corner-shape: squircle;
+    corner-shape: superellipse(1.5);
   }
 }
 
@@ -347,12 +363,12 @@ code:not(pre code) {
   border-radius: 6px; /* VitePress 默认导航项圆角 */
 }
 
-@supports (corner-shape: squircle) {
+@supports (corner-shape: superellipse(1.5)) {
   .VPSidebarItem .link,
   .VPNavBarMenuLink,
   .VPSocialLink {
     border-radius: 12px; /* 平滑圆角 2倍半径 (6px * 2) */
-    corner-shape: squircle;
+    corner-shape: superellipse(1.5);
   }
 }
 
@@ -361,10 +377,10 @@ code:not(pre code) {
   border-radius: 12px; /* VitePress 默认徽章圆角 */
 }
 
-@supports (corner-shape: squircle) {
+@supports (corner-shape: superellipse(1.5)) {
   .VPBadge {
     border-radius: 24px; /* 平滑圆角 2倍半径 (12px * 2) */
-    corner-shape: squircle;
+    corner-shape: superellipse(1.5);
   }
 }
 
@@ -374,11 +390,11 @@ code:not(pre code) {
   border-radius: 12px; /* VitePress 默认特性卡片圆角 */
 }
 
-@supports (corner-shape: squircle) {
+@supports (corner-shape: superellipse(1.5)) {
   .VPFeature,
   .VPHomeFeatures .box {
     border-radius: 24px; /* 平滑圆角 2倍半径 (12px * 2) */
-    corner-shape: squircle;
+    corner-shape: superellipse(1.5);
   }
 }
 
@@ -389,12 +405,12 @@ input[type="search"],
   border-radius: 6px; /* VitePress 默认输入框圆角 */
 }
 
-@supports (corner-shape: squircle) {
+@supports (corner-shape: superellipse(1.5)) {
   input[type="text"],
   input[type="search"],
   .VPNavBarSearch input {
     border-radius: 12px; /* 平滑圆角 2倍半径 (6px * 2) */
-    corner-shape: squircle;
+    corner-shape: superellipse(1.5);
   }
 }
 
@@ -403,10 +419,10 @@ input[type="search"],
   border-radius: 8px; /* VitePress 默认分页器圆角 */
 }
 
-@supports (corner-shape: squircle) {
+@supports (corner-shape: superellipse(1.5)) {
   .VPDocFooter .pager-link {
     border-radius: 16px; /* 平滑圆角 2倍半径 (8px * 2) */
-    corner-shape: squircle;
+    corner-shape: superellipse(1.5);
   }
 }
 
@@ -416,11 +432,11 @@ input[type="search"],
   border-radius: 12px; /* VitePress 默认团队成员卡片圆角 */
 }
 
-@supports (corner-shape: squircle) {
+@supports (corner-shape: superellipse(1.5)) {
   .VPTeamMembers .profile,
   .VPTeamMembersItem {
     border-radius: 24px; /* 平滑圆角 2倍半径 (12px * 2) */
-    corner-shape: squircle;
+    corner-shape: superellipse(1.5);
   }
 }
 
@@ -435,10 +451,10 @@ input[type="search"],
   border-radius: 8px; /* VitePress 默认表格圆角 */
 }
 
-@supports (corner-shape: squircle) {
+@supports (corner-shape: superellipse(1.5)) {
   .vp-doc table {
     border-radius: 16px; /* 平滑圆角 2倍半径 (8px * 2) */
-    corner-shape: squircle;
+    corner-shape: superellipse(1.5);
   }
 }
 

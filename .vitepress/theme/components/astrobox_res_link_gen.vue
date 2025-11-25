@@ -131,10 +131,10 @@ const clearInput = () => {
 }
 
 /* 平滑圆角支持 - Chrome 144+ */
-@supports (corner-shape: squircle) {
+@supports (corner-shape: superellipse(1.5)) {
   .resource-link-generator {
-    border-radius: 16px; /* 平滑圆角需要约2倍半径 (8px * 2) */
-    corner-shape: squircle;
+    border-radius: 20px; /* 平滑圆角 */
+    corner-shape: superellipse(1.5);
   }
 }
 
@@ -175,10 +175,10 @@ input {
 }
 
 /* 平滑圆角 - Chrome 144+ */
-@supports (corner-shape: squircle) {
+@supports (corner-shape: superellipse(1.5)) {
   input {
     border-radius: 12px; /* 平滑圆角需要约2倍半径 (6px * 2) */
-    corner-shape: squircle;
+    corner-shape: superellipse(1.5);
   }
 }
 
@@ -211,10 +211,10 @@ button {
 }
 
 /* 平滑圆角 - Chrome 144+ */
-@supports (corner-shape: squircle) {
+@supports (corner-shape: superellipse(1.5)) {
   button {
     border-radius: 12px; /* 平滑圆角需要约2倍半径 (6px * 2) */
-    corner-shape: squircle;
+    corner-shape: superellipse(1.5);
   }
 }
 
@@ -264,10 +264,10 @@ button:disabled {
 }
 
 /* 平滑圆角 - Chrome 144+ */
-@supports (corner-shape: squircle) {
+@supports (corner-shape: superellipse(1.5)) {
   .output-section {
     border-radius: 12px; /* 平滑圆角需要约2倍半径 (6px * 2) */
-    corner-shape: squircle;
+    corner-shape: superellipse(1.5);
   }
 }
 

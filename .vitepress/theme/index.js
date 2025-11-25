@@ -8,8 +8,6 @@ import './style.css'
 
 // 要加新组件就在这里导入
 import WFDownloadBtn from '../theme/components/watchface_download_button.vue'
-import Highlight from './components/format/highlight.vue'
-import Color from './components/format/color.vue'
 import Giscus from './components/giscus.vue'
 import ArticleCard from './components/ArticleCard.vue'
 
@@ -32,8 +30,6 @@ export default {
   enhanceApp({ app, router, siteData }) {
     // 在这里导出
     app.component('WFDownloadBtn', WFDownloadBtn);
-    app.component('Highlight', Highlight);
-    app.component('Color', Color);
     app.component('Giscus', Giscus);
     app.component('ArticleCard', ArticleCard);
   }

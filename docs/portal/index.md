@@ -15,9 +15,6 @@ import UrlEncoder from '/.vitepress/theme/components/url_encoder.vue'
 
 ## 小工具
 
-
-
-
 ::: details ⌚ 米环预览图生成器
 [miband.zaona.top](https://miband.zaona.top/) by [Zaona](https://github.com/zaona)
 
@@ -66,21 +63,7 @@ import UrlEncoder from '/.vitepress/theme/components/url_encoder.vue'
 
 ## 组件示例
 
-
-
-
 <WFDownloadBtn title="我是显示标题" resourceName="我是资源名称" />
-
-
-
-
-<Highlight>高亮文字</Highlight>
-
-<Color>默认（brand1）文字颜色</Color>
-
-<Color color="var(--vp-c-brand-2)">brand2 颜色</Color>
-
-<Color color="var(--vp-c-brand-3)">brand3 颜色rj</Color>
 
 
 
