@@ -1,4 +1,8 @@
 ---
+prev:
+   text: 'MaterialFlex & MaterialMania'
+   link: 'docs/creation/watchface/material'
+
 next:
   text: 'banDS'
   link: 'docs/creation/watchface/banDS'
@@ -20,7 +24,7 @@ next:
 
 
 
-::: details DeepSeek 总结
+::: ai
 ### 🌟 **核心亮点**
 - **灵感来源**：基于 Nintendo Switch 2 的 UI 设计，结合简洁与现代感，适配智能手环的竖屏显示。
 - **设计风格**：延续 NS2 的渐变选框、扁平化图标和简洁布局，支持**深浅双模式**切换。
