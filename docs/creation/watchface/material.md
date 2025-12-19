@@ -197,16 +197,16 @@ Logo 下面还加了淡淡的阴影，提高了一下可读性。
 ### MaterialFlex
 
 <div style="overflow-x: auto;">
-  <table style="width: 2500px;">
+  <table style="width: 2300px;">
       <tr style="border: 0">
-        <td style="border: 0"><img src="https://raw.githubusercontent.com/hrsthrt74/MaterialFlex-for-astrobox/refs/heads/main/preview0.png"></img></td>
-        <td style="border: 0"><img src="https://raw.githubusercontent.com/hrsthrt74/MaterialFlex-for-astrobox/refs/heads/main/preview1.png"></img></td>
-        <td style="border: 0"><img src="https://raw.githubusercontent.com/hrsthrt74/MaterialFlex-for-astrobox/refs/heads/main/preview2.png"></img></td>
-        <td style="border: 0"><img src="https://raw.githubusercontent.com/hrsthrt74/MaterialFlex-for-astrobox/refs/heads/main/preview3.png"></img></td>
-        <td style="border: 0"><img src="https://raw.githubusercontent.com/hrsthrt74/MaterialFlex-for-astrobox/refs/heads/main/preview4.png"></img></td>
-        <td style="border: 0"><img src="https://raw.githubusercontent.com/hrsthrt74/MaterialFlex-for-astrobox/refs/heads/main/preview5.png"></img></td>
-        <td style="border: 0"><img src="https://raw.githubusercontent.com/hrsthrt74/MaterialFlex-for-astrobox/refs/heads/main/preview6.png"></img></td>
-        <td style="border: 0"><img src="https://raw.githubusercontent.com/hrsthrt74/MaterialFlex-for-astrobox/refs/heads/main/preview7.png"></img></td>
+        <td style="border: 0; padding: 0px 10px 0px 0px;"><img src="https://raw.githubusercontent.com/hrsthrt74/MaterialFlex-for-astrobox/refs/heads/main/preview0.png"></img></td>
+        <td style="border: 0; padding: 0px 10px 0px 0px;"><img src="https://raw.githubusercontent.com/hrsthrt74/MaterialFlex-for-astrobox/refs/heads/main/preview1.png"></img></td>
+        <td style="border: 0; padding: 0px 10px 0px 0px;"><img src="https://raw.githubusercontent.com/hrsthrt74/MaterialFlex-for-astrobox/refs/heads/main/preview2.png"></img></td>
+        <td style="border: 0; padding: 0px 10px 0px 0px;"><img src="https://raw.githubusercontent.com/hrsthrt74/MaterialFlex-for-astrobox/refs/heads/main/preview3.png"></img></td>
+        <td style="border: 0; padding: 0px 10px 0px 0px;"><img src="https://raw.githubusercontent.com/hrsthrt74/MaterialFlex-for-astrobox/refs/heads/main/preview4.png"></img></td>
+        <td style="border: 0; padding: 0px 10px 0px 0px;"><img src="https://raw.githubusercontent.com/hrsthrt74/MaterialFlex-for-astrobox/refs/heads/main/preview5.png"></img></td>
+        <td style="border: 0; padding: 0px 10px 0px 0px;"><img src="https://raw.githubusercontent.com/hrsthrt74/MaterialFlex-for-astrobox/refs/heads/main/preview6.png"></img></td>
+        <td style="border: 0; padding: 0px 10px 0px 0px;"><img src="https://raw.githubusercontent.com/hrsthrt74/MaterialFlex-for-astrobox/refs/heads/main/preview7.png"></img></td>
       </tr>
   </table>
 </div>
@@ -214,15 +214,15 @@ Logo 下面还加了淡淡的阴影，提高了一下可读性。
 ### MaterialMania
 
 <div style="overflow-x: auto;">
-  <table style="width: 2200px;">
+  <table style="width: 2000px;">
       <tr style="border: 0">
-        <td style="border: 0"><img src="https://raw.githubusercontent.com/hrsthrt74/MaterialMania-for-astrobox/refs/heads/main/preview0.png"></img></td>
-        <td style="border: 0"><img src="https://raw.githubusercontent.com/hrsthrt74/MaterialMania-for-astrobox/refs/heads/main/preview1.png"></img></td>
-        <td style="border: 0"><img src="https://raw.githubusercontent.com/hrsthrt74/MaterialMania-for-astrobox/refs/heads/main/preview2.png"></img></td>
-        <td style="border: 0"><img src="https://raw.githubusercontent.com/hrsthrt74/MaterialMania-for-astrobox/refs/heads/main/preview3.png"></img></td>
-        <td style="border: 0"><img src="https://raw.githubusercontent.com/hrsthrt74/MaterialMania-for-astrobox/refs/heads/main/preview4.png"></img></td>
-        <td style="border: 0"><img src="https://raw.githubusercontent.com/hrsthrt74/MaterialMania-for-astrobox/refs/heads/main/preview5.png"></img></td>
-        <td style="border: 0"><img src="https://raw.githubusercontent.com/hrsthrt74/MaterialMania-for-astrobox/refs/heads/main/preview6.png"></img></td>
+        <td style="border: 0; padding: 0px 10px 0px 0px;"><img src="https://raw.githubusercontent.com/hrsthrt74/MaterialMania-for-astrobox/refs/heads/main/preview0.png"></img></td>
+        <td style="border: 0; padding: 0px 10px 0px 0px;"><img src="https://raw.githubusercontent.com/hrsthrt74/MaterialMania-for-astrobox/refs/heads/main/preview1.png"></img></td>
+        <td style="border: 0; padding: 0px 10px 0px 0px;"><img src="https://raw.githubusercontent.com/hrsthrt74/MaterialMania-for-astrobox/refs/heads/main/preview2.png"></img></td>
+        <td style="border: 0; padding: 0px 10px 0px 0px;"><img src="https://raw.githubusercontent.com/hrsthrt74/MaterialMania-for-astrobox/refs/heads/main/preview3.png"></img></td>
+        <td style="border: 0; padding: 0px 10px 0px 0px;"><img src="https://raw.githubusercontent.com/hrsthrt74/MaterialMania-for-astrobox/refs/heads/main/preview4.png"></img></td>
+        <td style="border: 0; padding: 0px 10px 0px 0px;"><img src="https://raw.githubusercontent.com/hrsthrt74/MaterialMania-for-astrobox/refs/heads/main/preview5.png"></img></td>
+        <td style="border: 0; padding: 0px 10px 0px 0px;"><img src="https://raw.githubusercontent.com/hrsthrt74/MaterialMania-for-astrobox/refs/heads/main/preview6.png"></img></td>
       </tr>
   </table>
 </div>
