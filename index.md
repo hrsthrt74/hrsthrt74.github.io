@@ -31,28 +31,34 @@ features:
 
 <div class="article-cards-container">
   <ArticleCard
+    image="https://raw.githubusercontent.com/hrsthrt74/MaterialFlex-for-astrobox/refs/heads/main/cover.png"
+    link="/docs/creation/watchface/material"
+    title="表盘 MaterialFlex & MaterialMania"
+    description="Material Design 风格表盘"
+  />
+  <ArticleCard
     image="https://raw.githubusercontent.com/hrsthrt74/create_mod_meme_stickers/main/%E5%A4%B4%E5%9B%BE.png"
     link="https://github.com/hrsthrt74/create_mod_meme_stickers"
     title="机械动力 MEME 贴纸"
     description="Ver. 2.0 现已更新"
   />
   <ArticleCard
-    image="https://raw.githubusercontent.com/hrsthrt74/WF2-for-astrobox/refs/heads/main/cover.png"
-    link="/docs/creation/watchface/WF2"
-    title="表盘 WF2"
-    description="为啥右边的进度条只留一半"
-  />
-  <ArticleCard
-    image="https://raw.githubusercontent.com/hrsthrt74/banDS-for-astrobox/refs/heads/main/cover.png"
-    link="/docs/creation/watchface/banDS"
-    title="表盘 banDS"
-    description="为了还原感觉很 NB 的 NDS UI 而做的表盘"
+    image="/doc/creation/pic/文字背屏壁纸 Pro.png"
+    link=""
+    title="文字背屏壁纸 for Xiaomi 17 Pro"
+    description="网友：比市场部会宣传"
   />
 </div>
 
 ## 最近更新
 
 <div class="article-cards-container">
+  <ArticleCard
+    image="https://raw.githubusercontent.com/hrsthrt74/MaterialFlex-for-astrobox/refs/heads/main/cover.png"
+    link="/docs/creation/watchfaces/material.md"
+    title="表盘 MaterialFlex & MaterialMania"
+    description="Material Design 风格表盘"
+  />
   <ArticleCard
     image="/doc/creation/pic/CUST MC.svg"
     link=""
@@ -64,12 +70,6 @@ features:
     link="https://github.com/hrsthrt74/create_mod_meme_stickers"
     title="机械动力 MEME 贴纸"
     description="Ver. 2.0 头图"
-  />
-  <ArticleCard
-    image="/doc/creation/pic/文字背屏壁纸 Pro.png"
-    link=""
-    title="文字背屏壁纸 for Xiaomi 17 Pro"
-    description="网友：比市场部会宣传"
   />
 </div>
 
