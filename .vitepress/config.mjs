@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import container from 'markdown-it-container'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -29,6 +30,28 @@ export default defineConfig({
     })(window, document, "clarity", "script", "t0p5gq619a");`
       ]
     ],
+
+  markdown: {
+    config: (md) => {
+      // 2. 直接使用导入的 container
+      md.use(container, 'ai', {
+        validate(params) {
+          return params.trim().match(/^ai\s*(.*)$/);
+        },
+        render(tokens, idx) {
+          const m = tokens[idx].info.trim().match(/^ai\s*(.*)$/);
+          if (tokens[idx].nesting === 1) {
+            const title = m && m[1] ? m[1] : 'AI 总结';
+            // 加上 VitePress 官方的 custom-block 类名可以获得基础样式
+            return `<details class="details ai-container custom-block">
+        <summary class="custom-block-title">${title}</summary>\n`;
+          } else {
+            return '</details>\n';
+          }
+        }
+      })
+    }
+  },
 
   // 自定义主题
   themeConfig: {

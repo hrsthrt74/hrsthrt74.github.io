@@ -267,6 +267,7 @@ iframe {
 
 /* 高亮标记 */
 mark {
+  color: var(--vp-c-text-1);
   background-color: rgba(255, 217, 5, 0.2); /* 你可以自定义颜色 */
   padding: 2px 4px;
   border-radius: 3px; /* fallback: 旧浏览器小圆角 */
@@ -278,8 +279,6 @@ mark {
     corner-shape: superellipse(1.5);
   }
 }
-
-
 
 
 /* ===================================================================
@@ -446,15 +445,43 @@ input[type="search"],
   border-radius: 50%; /* 圆形头像保持不变 */
 }
 
-/* 表格 */
-.vp-doc table {
-  border-radius: 8px; /* VitePress 默认表格圆角 */
+/* ===================================================================
+ * AI Container 自定义样式
+ * =================================================================== */
+ .ai-container {
+  /* 1. 边框：2px 实线，使用 CSS 变量方便后期统一修改颜色 */
+  border: 2px solid transparent;
+  
+  /* 3. 渐变描边的黑科技 (利用 background-origin) */
+  background-image: linear-gradient(var(--vp-c-bg), var(--vp-c-bg)), 
+                    linear-gradient(to right, #6365f1, #a855f7, #ec4899);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+
 }
 
-@supports (corner-shape: superellipse(1.5)) {
-  .vp-doc table {
-    border-radius: 16px; /* 平滑圆角 2倍半径 (8px * 2) */
-    corner-shape: superellipse(1.5);
-  }
+/* 标题样式：让它更有 AI 助手的感觉 */
+.ai-container .custom-block-title {
+  color: #6366f1; /* 标题颜色 */
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  
 }
 
+/* 在标题前加一个 AI 风格的小图标 */
+.ai-container .custom-block-title::before {
+  content: "✦";
+  margin-right: 8px;
+  font-size: 1.2rem;
+  background: linear-gradient(to right, #6366f1, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 容器内正文文字颜色 */
+.ai-container p {
+  color: var(--vp-c-text-1); /* 自动适配 VitePress 的正文字体颜色 */
+}

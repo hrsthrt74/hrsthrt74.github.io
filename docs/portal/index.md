@@ -10,6 +10,9 @@ import UrlEncoder from '/.vitepress/theme/components/UrlEncoder.vue'
 
 一些有用的工具 or 信息。
 
+::: ai
+示例
+:::
 
 
 
