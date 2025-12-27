@@ -9,7 +9,6 @@
 ---
 
 - [我的社交媒体 / 游戏账号](./social.md)
-- [联系我](./social/#联系我)
 - [为什么 ID 叫 hrsthrt74？](./why_hrsthrt74.md)
 
 ---
