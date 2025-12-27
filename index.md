@@ -11,15 +11,15 @@ hero:
 features:
   - icon: 👀
     title: 作品
-    details: 关于我的作品背后的历程（可能还有小秘密）
+    details: 关于我的作品背后的故事
     link: "/docs/creation"
   - icon: 🧐
     title: 技术
-    details: Android 以及其它领域的技术文章存档
+    details: 文章存档
     link: "/docs/technical"
   - icon: 🤗
     title: 关于我
-    details: 想了解我更多的话欢迎~~
+    details: 了解更多关于 74 的事
     link: "/docs/about74"
 ---
 

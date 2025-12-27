@@ -4,32 +4,19 @@
 
 ---
 
-[![Header](../../public/header_pic/杂图.svg)](../creation/pic/index.md)
-
-[![Header](../../public/header_pic/表盘.svg)](../creation/watchface/index.md)
-
-[![Header](../../public/header_pic/周边.svg)](../creation/goods/index.md)
-
-[![Header](../../public/header_pic/视频.svg)](../creation/video/index.md)
-
-[![Header](../../public/header_pic/头像.svg)](../creation/avatar/index.md)
-
-
-
+<CategoryEntry icon="󰁽" title="Logo · 杂图 · 小设计" color="#0050daff" target="pic" />
+<CategoryEntry icon="󰀰" title="表盘" color="#1acee2ff" target="watchface" />
+<CategoryEntry icon="󰁹" title="头像" color="#e05114ff" target="avatar" />
 
 ---
 
 ::: details 归档
 以往的作品，但是现已不再更新或者已过时。
 
-[![Header](../../public/header_pic/Minecraft%20项目.svg)](../creation/mc/index.md)
-
-[![Header](../../public/header_pic/Magisk%20模块.svg)](../creation/magisk/index.md)
+<CategoryEntry icon="󰁅" title="Minecraft 项目" color="#12c94cff" target="mc" />
 
 :::
 
-
-
 ---
 
-[![Header](../../public/header_pic/仪表盘%20入口.svg)](../creation/blog/dashboard.md)
+<CategoryEntry icon="󰀝" title="Blog 仪表盘" color="#8b0ce0ff" target="blog/dashboard" />

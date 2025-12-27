@@ -6,10 +6,11 @@ import './style.css'
 
 
 
-// 要加新组件就在这里导入
+// 要加新【全局】组件就在这里导入
 import WFDownloadBtn from '../theme/components/WatchfaceDownloadButton.vue'
 import Giscus from './components/Giscus.vue'
 import ArticleCard from './components/ArticleCard.vue'
+import CategoryEntry from './components/CategoryEntry.vue'
 
 
 
@@ -28,9 +29,10 @@ export default {
   
 
   enhanceApp({ app, router, siteData }) {
-    // 在这里导出
+    // 全局组件在这里导出
     app.component('WFDownloadBtn', WFDownloadBtn);
     app.component('Giscus', Giscus);
     app.component('ArticleCard', ArticleCard);
+    app.component('CategoryEntry', CategoryEntry);
   }
 }
