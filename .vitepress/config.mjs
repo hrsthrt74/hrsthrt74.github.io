@@ -1,8 +1,20 @@
 import { defineConfig } from 'vitepress'
 import container from 'markdown-it-container'
+import { fileURLToPath, URL } from 'node:url'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  vite: {
+    resolve: {
+      alias: [
+        {
+          // 配置 @theme 别名，指向 .vitepress/theme 目录，方便在 markdown 中引用自定义组件
+          find: /^@theme\/(.*)/,
+          replacement: fileURLToPath(new URL('./theme/$1', import.meta.url))
+        }
+      ]
+    }
+  },
 
   // 站点语言
   lang: 'zh-CN',
