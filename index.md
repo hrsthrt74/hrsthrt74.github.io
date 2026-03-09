@@ -54,6 +54,12 @@ features:
 
 <div class="article-cards-container">
   <ArticleCard
+    image="https://raw.githubusercontent.com/hrsthrt74/capture-the-moment-for-astrobox/refs/heads/main/cover.png"
+    link="/docs/creation/watchfaces/CAPTURE_THE_MOMENT.md"
+    title="表盘 CAPTURE THE MOMENT"
+    description="徕卡风格表盘"
+  />
+  <ArticleCard
     image="https://raw.githubusercontent.com/hrsthrt74/MaterialFlex-for-astrobox/refs/heads/main/cover.png"
     link="/docs/creation/watchfaces/material.md"
     title="表盘 MaterialFlex & MaterialMania"
@@ -64,12 +70,6 @@ features:
     link=""
     title="VTuber 风 CUST MC Logo"
     description="当 MC 社团变得可爱起来"
-  />
-  <ArticleCard
-    image="https://raw.githubusercontent.com/hrsthrt74/create_mod_meme_stickers/main/%E5%A4%B4%E5%9B%BE.png"
-    link="https://github.com/hrsthrt74/create_mod_meme_stickers"
-    title="机械动力 MEME 贴纸"
-    description="Ver. 2.0 头图"
   />
 </div>
 
