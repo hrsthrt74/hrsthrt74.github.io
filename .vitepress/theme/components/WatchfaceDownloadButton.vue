@@ -19,8 +19,8 @@ const { isDark } = useData()
 // 根据 isDark 的值计算图片 URL
 const imageUrl = computed(() => {
   return isDark.value
-    ? 'https://astrobox.online/goab/zhcn/black.svg' // 深色模式图片
-    : 'https://astrobox.online/goab/zhcn/white.svg' // 浅色模式图片
+    ? '/components/astrobox_badge/Get it on AstroBox - Link Badge - Dark.svg' // 深色模式图片（本地）
+    : '/components/astrobox_badge/Get it on AstroBox - Link Badge - Light.svg' // 浅色模式图片（本地）
 })
 
 const linkUrl = computed(() => { // 也可以把 linkUrl 变成 computed，虽然这里不是必须的
