@@ -2,6 +2,9 @@
 next:
   text: 'WF2'
   link: 'docs/creation/watchface/WF2'
+prev:
+  text: 'CAPTURE THE MOMENT'
+  link: 'docs/creation/watchface/CAPTURE_THE_MOMENT'
 ---
 
 
