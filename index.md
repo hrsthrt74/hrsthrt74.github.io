@@ -55,13 +55,13 @@ features:
 <div class="article-cards-container">
   <ArticleCard
     image="https://raw.githubusercontent.com/hrsthrt74/capture-the-moment-for-astrobox/refs/heads/main/cover.png"
-    link="/docs/creation/watchfaces/CAPTURE_THE_MOMENT.md"
+    link="/docs/creation/watchfaces/CAPTURE_THE_MOMENT"
     title="表盘 CAPTURE THE MOMENT"
     description="徕卡风格表盘"
   />
   <ArticleCard
     image="https://raw.githubusercontent.com/hrsthrt74/MaterialFlex-for-astrobox/refs/heads/main/cover.png"
-    link="/docs/creation/watchfaces/material.md"
+    link="/docs/creation/watchfaces/material"
     title="表盘 MaterialFlex & MaterialMania"
     description="Material Design 风格表盘"
   />
