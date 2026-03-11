@@ -1,4 +1,7 @@
 ---
+prev:
+  text: '死了么'
+  link: 'docs/creation/watchface/sileme'
 next:
   text: 'MaterialFlex & MaterialMania'
   link: 'docs/creation/watchface/material'
