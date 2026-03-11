@@ -1,7 +1,7 @@
 ---
 next:
-	text: 'CAPTURE THE MOMENT'
-	link: 'docs/creation/watchface/CAPTURE_THE_MOMENT'
+  text: 'CAPTURE THE MOMENT'
+  link: 'docs/creation/watchface/CAPTURE_THE_MOMENT'
 ---
 
 # 死了么
