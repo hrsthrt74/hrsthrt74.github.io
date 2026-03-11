@@ -55,7 +55,7 @@ features:
 <div class="article-cards-container">
   <ArticleCard
     image="https://raw.githubusercontent.com/hrsthrt74/sileme-for-astrobox/refs/heads/main/cover.png"
-    link="/docs/creation/watchface/silme"
+    link="/docs/creation/watchface/sileme"
     title="表盘 死了么"
     description="还没有！"
   />
