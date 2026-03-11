@@ -7,6 +7,8 @@
 
 ---
 
+[![死了么](../../../public/header_pic/%E6%AD%BB%E4%BA%86%E4%B9%88.webp)](./sileme.md)
+
 [![CAPTURE THE MOMENT](../../../public/header_pic/CAPTURE%20THE%20MOMENT.webp)](./CAPTURE_THE_MOMENT.md)
 
 [![MaterialFlex&MaterialMania](../../../public/header_pic/MaterialFlex%20MaterialMania.webp)](./material.md)

@@ -54,6 +54,12 @@ features:
 
 <div class="article-cards-container">
   <ArticleCard
+    image="https://raw.githubusercontent.com/hrsthrt74/sileme-for-astrobox/refs/heads/main/cover.png"
+    link="/docs/creation/watchface/silme"
+    title="表盘 死了么"
+    description="还没有！"
+  />
+  <ArticleCard
     image="https://raw.githubusercontent.com/hrsthrt74/capture-the-moment-for-astrobox/refs/heads/main/cover.png"
     link="/docs/creation/watchface/CAPTURE_THE_MOMENT"
     title="表盘 CAPTURE THE MOMENT"
@@ -64,12 +70,6 @@ features:
     link="/docs/creation/watchface/material"
     title="表盘 MaterialFlex & MaterialMania"
     description="Material Design 风格表盘"
-  />
-  <ArticleCard
-    image="/doc/creation/pic/CUST MC.svg"
-    link=""
-    title="VTuber 风 CUST MC Logo"
-    description="当 MC 社团变得可爱起来"
   />
 </div>
 
