@@ -22,6 +22,12 @@
     link="https://blog.waijade.cn/"
   />
   <FriendCard
+    icon="https://ikun-cxkpro.top/assets/home/CXKPRO.png"
+    title="CXKPRO_BLOG"
+    desc=""
+    link="https://ikun-cxkpro.top/"
+  />
+  <FriendCard
     icon="📄"
     title="广告位招租"
     desc="点击联系我~"
