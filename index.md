@@ -27,7 +27,7 @@ features:
 如果存在链接打不开 / 打开后为空屏的情况，说明您打开的页面尚未写完，敬请谅解~
 :::
 
-## 推荐
+## 推荐阅读
 
 <div class="article-cards-container">
   <ArticleCard
@@ -70,6 +70,23 @@ features:
     link="/docs/creation/watchface/material"
     title="表盘 MaterialFlex & MaterialMania"
     description="Material Design 风格表盘"
+  />
+</div>
+
+## 友链
+
+<div class="friend-cards-container">
+  <FriendCard
+    icon="https://waijade.cn/avatar.png"
+    title="WaiJade's Blog"
+    desc="Stay Hungry, Stay Foolish."
+    link="https://blog.waijade.cn/"
+  />
+  <FriendCard
+    icon="📄"
+    title="广告位招租"
+    desc="点击联系我~"
+    link="/docs/about74/social.html#%E8%81%94%E7%B3%BB%E6%88%91"
   />
 </div>
 

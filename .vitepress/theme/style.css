@@ -256,6 +256,28 @@ iframe {
 
 
 
+/* FriendCard 响应式布局样式 */
+.friend-cards-container {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, 1fr); /* 移动端两列 */
+}
+
+/* 大屏三列 */
+@media (min-width: 1025px) {
+  .friend-cards-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 去掉 VitePress 默认给 a[target="_blank"] 加的外链箭头 */
+.friend-card::after {
+  display: none !important;
+}
+
+
+
+
 /* ArticleCard 图片去圆角 */
 .article-cards-container img {
   border-radius: 0;

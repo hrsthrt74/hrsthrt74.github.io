@@ -89,6 +89,61 @@ import UrlEncoder from '/.vitepress/theme/components/UrlEncoder.vue'
 <p></p>
 <WFDownloadBtn title="我是显示标题" resourceName="我是资源名称" />
 
+### 友链
+
+<p></p>
+
+<div class="friend-cards-container">
+  <FriendCard
+    icon="👀"
+    title="广告位招租"
+    desc="点击联系我"
+    link="/docs/about74/social.html#%E8%81%94%E7%B3%BB%E6%88%91"
+  />
+  <FriendCard
+    icon="😱"
+    title="广告位招租"
+    desc="点击联系我"
+    link="/docs/about74/social.html#%E8%81%94%E7%B3%BB%E6%88%91"
+  />
+  <FriendCard
+    icon="🤔"
+    title="广告位招租"
+    desc="点击联系我"
+    link="/docs/about74/social.html#%E8%81%94%E7%B3%BB%E6%88%91"
+  />
+</div>
+
+### 文章卡片
+
+<p></p>
+
+<div class="article-cards-container">
+  <ArticleCard
+    image="https://raw.githubusercontent.com/hrsthrt74/sileme-for-astrobox/refs/heads/main/cover.png"
+    link="/docs/creation/watchface/sileme"
+    title="表盘 死了么"
+    description="还没有！"
+  />
+  <ArticleCard
+    image="https://raw.githubusercontent.com/hrsthrt74/capture-the-moment-for-astrobox/refs/heads/main/cover.png"
+    link="/docs/creation/watchface/CAPTURE_THE_MOMENT"
+    title="表盘 CAPTURE THE MOMENT"
+    description="徕卡风格表盘"
+  />
+  <ArticleCard
+    image="https://raw.githubusercontent.com/hrsthrt74/MaterialFlex-for-astrobox/refs/heads/main/cover.png"
+    link="/docs/creation/watchface/material"
+    title="表盘 MaterialFlex & MaterialMania"
+    description="Material Design 风格表盘"
+  />
+</div>
+
+::: info 留言板
+<Giscus />
+<p></p>
+:::
+
 ---
 
 

@@ -18,7 +18,7 @@ let timer = null
 
 // 计算运行时间
 const calculateRuntime = () => {
-  const startDate = new Date('2025-07-06')
+  const startDate = new Date('2025-07-05T17:43:00Z') // 2025-07-06 01:43 GMT+8
   const now = new Date()
   const diff = now - startDate
   
