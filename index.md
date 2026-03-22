@@ -78,9 +78,9 @@ features:
 <div class="friend-cards-container">
   <FriendCard
     icon="https://waijade.cn/avatar.png"
-    title="WaiJade's Blog"
+    title="WaiJade"
     desc="Stay Hungry, Stay Foolish."
-    link="https://blog.waijade.cn/"
+    link="https://waijade.cn/"
   />
   <FriendCard
     icon="https://ikun-cxkpro.top/assets/home/CXKPRO.png"
