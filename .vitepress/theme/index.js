@@ -11,6 +11,7 @@ import './custom-fonts.css'
 import WFDownloadBtn from '../theme/components/WatchfaceDownloadButton.vue'
 import Giscus from './components/Giscus.vue'
 import ArticleCard from './components/ArticleCard.vue'
+import PicMasonryCard from './components/PicMasonryCard.vue'
 import CategoryEntry from './components/CategoryEntry.vue'
 import FriendCard from './components/FriendCard.vue'
 
@@ -35,6 +36,7 @@ export default {
     app.component('WFDownloadBtn', WFDownloadBtn);
     app.component('Giscus', Giscus);
     app.component('ArticleCard', ArticleCard);
+    app.component('PicMasonryCard', PicMasonryCard);
     app.component('CategoryEntry', CategoryEntry);
     app.component('FriendCard', FriendCard);
   }
