@@ -83,9 +83,9 @@ layout: home
   />
   <PicMasonryCard
     image="/doc/creation/pic/神人视频封面.png"
-    link=""
+    link="https://www.bilibili.com/video/BV1yozcB6E7B/"
     title="视频「明日方舟：冲末地」封面"
-    description="神人视频封面"
+    description="神人视频封面（）点击跳转到视频"
     date="2026.01.23"
   />
   <PicMasonryCard
