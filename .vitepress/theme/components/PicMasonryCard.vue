@@ -5,6 +5,12 @@
       ref="cardEl"
       :href="hasLink ? link : undefined"
       class="card-link"
+      :class="{ 'card-link--preview': !hasLink }"
+      :role="hasLink ? undefined : 'button'"
+      :tabindex="hasLink ? undefined : 0"
+      @click="handleCardClick"
+      @keydown.enter.prevent="handleCardClick"
+      @keydown.space.prevent="handleCardClick"
     >
       <div class="card-image">
         <img :src="image" :alt="title" loading="lazy" @load="scheduleLayout" />
@@ -15,6 +21,24 @@
         <p v-if="date" class="card-date">{{ date }}</p>
       </div>
     </component>
+
+    <Teleport to="body">
+      <div
+        v-if="isPreviewOpen"
+        class="image-preview-overlay"
+        @click.self="closePreview"
+      >
+        <button
+          type="button"
+          class="image-preview-close"
+          aria-label="Close image preview"
+          @click="closePreview"
+        >
+          ×
+        </button>
+        <img class="image-preview-content" :src="image" :alt="title" />
+      </div>
+    </Teleport>
   </div>
 </template>
 
@@ -48,6 +72,7 @@ const props = defineProps({
 })
 
 const hasLink = computed(() => props.link.trim().length > 0)
+const isPreviewOpen = ref(false)
 
 const rootEl = ref(null)
 const cardEl = ref(null)
@@ -63,6 +88,30 @@ const scheduleLayout = () => {
     rafId = 0
     applyMasonrySpan()
   })
+}
+
+const handleCardClick = () => {
+  if (hasLink.value) {
+    return
+  }
+
+  openPreview()
+}
+
+const openPreview = () => {
+  isPreviewOpen.value = true
+  document.body.style.overflow = 'hidden'
+}
+
+const closePreview = () => {
+  isPreviewOpen.value = false
+  document.body.style.overflow = ''
+}
+
+const handleGlobalKeydown = (event) => {
+  if (event.key === 'Escape' && isPreviewOpen.value) {
+    closePreview()
+  }
 }
 
 const applyMasonrySpan = () => {
@@ -108,6 +157,7 @@ onMounted(async () => {
   }
 
   window.addEventListener('resize', scheduleLayout, { passive: true })
+  window.addEventListener('keydown', handleGlobalKeydown)
 })
 
 onBeforeUnmount(() => {
@@ -120,6 +170,8 @@ onBeforeUnmount(() => {
   }
 
   window.removeEventListener('resize', scheduleLayout)
+  window.removeEventListener('keydown', handleGlobalKeydown)
+  document.body.style.overflow = ''
 })
 </script>
 
@@ -150,6 +202,10 @@ onBeforeUnmount(() => {
   border-color: var(--vp-c-brand-1);
   box-shadow: var(--vp-shadow-2);
   transform: translateY(-2px);
+}
+
+.card-link--preview {
+  cursor: zoom-in;
 }
 
 .card-image {
@@ -204,6 +260,46 @@ onBeforeUnmount(() => {
   line-height: 1.4;
   color: var(--vp-c-text-2);
   opacity: 0.8;
+}
+
+.image-preview-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.image-preview-content {
+  max-width: min(1200px, calc(100vw - 48px));
+  max-height: calc(100vh - 48px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.image-preview-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.image-preview-close:hover {
+  background: rgba(255, 255, 255, 0.28);
 }
 
 html.dark .card-link {

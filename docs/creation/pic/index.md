@@ -8,6 +8,10 @@ layout: home
 
 # Logo · 杂图 · 小设计
 
+::: info TIPS
+点击图片可以放大~
+:::
+
 ---
 
 <div class="pic-masonry-container">
