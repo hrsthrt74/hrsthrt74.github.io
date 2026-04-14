@@ -89,6 +89,12 @@ features:
     link="https://ikun-cxkpro.top/"
   />
   <FriendCard
+    icon="https://static.apanzinc.top/apanzinc/128.png"
+    title="apanzinc"
+    desc="我是 apanzinc，一名学生，专注于前后端开发与人工智能应用的学习与实践。"
+    link="https://apanzinc.top/"
+  />
+  <FriendCard
     icon="📄"
     title="广告位招租"
     desc="点击联系我~"
