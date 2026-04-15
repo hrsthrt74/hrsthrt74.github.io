@@ -20,7 +20,7 @@ import SiteInfoCard from '/.vitepress/theme/components/blog-dashboard/SiteInfoCa
 
 
 ::: info 更新日志
-<!--@include: ./index.md{3,}-->
+<!--@include: ./update_log.md{3,}-->
 :::
 
 
