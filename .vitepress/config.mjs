@@ -74,7 +74,6 @@ export default defineConfig({
 
     // 顶部导航栏
     nav: [
-      { text: '🤔 杂谈', link: '/docs/misc_talk' },
       { text: '✍️ 作品', link: '/docs/creation' },
       { text: '🛠️ 技术', link: '/docs/technical' },
       { text: '🏄 关于我', link: '/docs/about74'},
