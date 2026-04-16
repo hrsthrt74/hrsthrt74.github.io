@@ -83,7 +83,7 @@ features:
     link="https://waijade.cn/"
   />
   <FriendCard
-    icon="https://ikun-cxkpro.top/assets/home/CXKPRO.png"
+    icon="https://ikun-cxkpro.top/assets/home/CXKPRO.webp"
     title="CXKPRO_BLOG"
     desc=""
     link="https://ikun-cxkpro.top/"
@@ -93,6 +93,18 @@ features:
     title="apanzinc"
     desc="我是 apanzinc，一名学生，专注于前后端开发与人工智能应用的学习与实践。"
     link="https://apanzinc.top/"
+  />
+  <FriendCard
+    icon="http://bbslrc.vxni.ink/IMG_6459.jpeg"
+    title="LR.C"
+    desc="你好！我是 LR.C。热爱生活，热衷于探索未知的事物。"
+    link="http://bbslrc.vxni.ink/#"
+  />
+  <FriendCard
+    icon="https://github.com/Eric-qiqi.png"
+    title="Eric"
+    desc=""
+    link="https://bandbbs.cn/members/130916"
   />
   <FriendCard
     icon="📄"
