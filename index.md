@@ -77,6 +77,12 @@ features:
 
 <div class="friend-cards-container">
   <FriendCard
+    icon="/misc/AstroBox v2 Icon.png"
+    title="AstroBox"
+    desc="业界领先的穿戴设备第三方管理工具"
+    link="https://astrobox.online"
+  />
+  <FriendCard
     icon="https://waijade.cn/avatar.png"
     title="WaiJade"
     desc="Stay Hungry, Stay Foolish."
@@ -105,6 +111,18 @@ features:
     title="Eric"
     desc=""
     link="https://bandbbs.cn/members/130916"
+  />
+  <FriendCard
+    icon="https://evoa.top/logo1.png"
+    title="EVOA"
+    desc=""
+    link="https://evoa.top/"
+  />
+  <FriendCard
+    icon="https://zaona.top/avatar.png"
+    title="Zaona"
+    desc=""
+    link="https://zaona.top/"
   />
   <FriendCard
     icon="📄"
