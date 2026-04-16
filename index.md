@@ -97,7 +97,7 @@ features:
   <FriendCard
     icon="http://bbslrc.vxni.ink/IMG_6459.jpeg"
     title="LR.C"
-    desc="泥嚎！我是 LR.C。热爱生活，热衷于探索未知的事物。"
+    desc="泥嚎！我是 LR.C。"
     link="http://bbslrc.vxni.ink/#"
   />
   <FriendCard
