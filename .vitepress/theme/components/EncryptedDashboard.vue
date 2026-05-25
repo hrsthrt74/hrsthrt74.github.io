@@ -42,16 +42,11 @@
     <!-- ============ 已解锁（展示数据） ============ -->
     <div v-else-if="state === 'unlocked' && decryptedData" class="state-card unlocked-card">
       <div class="unlock-header">
-        <h2 class="state-title">✅ 数据已解密</h2>
         <button class="clear-cache-btn" @click="clearCache">清除缓存</button>
       </div>
 
       <!-- 数据摘要 -->
       <div class="summary-row">
-        <div class="summary-item">
-          <span class="summary-num">{{ decryptedData.devices?.length || 0 }}</span>
-          <span class="summary-label">设备</span>
-        </div>
         <div class="summary-item">
           <span class="summary-num">{{ decryptedData.resources?.length || 0 }}</span>
           <span class="summary-label">资源</span>
@@ -63,6 +58,39 @@
         <div class="summary-item">
           <span class="summary-num">{{ generatedTime }}</span>
           <span class="summary-label">生成时间</span>
+        </div>
+      </div>
+
+      <!-- 评论时间线 -->
+      <div v-if="commentTimeline.length" class="comment-section">
+        <h3 class="section-title">💬 评论时间线</h3>
+        <div class="timeline">
+          <div
+            v-for="item in commentTimeline"
+            :key="item.comment.id"
+            class="timeline-item"
+          >
+            <div class="timeline-avatar">
+              <img
+                :src="item.comment.avator"
+                :alt="item.comment.nickname"
+                class="avatar-img"
+                loading="lazy"
+                @error="e => e.target.style.display='none'"
+              />
+            </div>
+            <div class="timeline-body">
+              <div class="timeline-header">
+                <span class="comment-nickname">{{ item.comment.nickname }}</span>
+                <span class="comment-time">{{ formatTime(item.comment.time) }}</span>
+              </div>
+              <p class="comment-content">{{ item.comment.content }}</p>
+              <div class="comment-badges">
+                <span class="badge badge-resource">{{ item.resourceName }}</span>
+                <span class="badge badge-device">{{ item.deviceCodename }}</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -162,6 +190,53 @@ const generatedTime = computed(() => {
     minute: '2-digit'
   })
 })
+
+/**
+ * 评论时间线：将所有评论按时间倒序排列，并附带所属资源的 name 和 deviceCodename。
+ */
+const commentTimeline = computed(() => {
+  const data = decryptedData.value
+  if (!data?.resources || !data?.comments) return []
+
+  // 构建 resource 查找表：rid → { name, deviceCodename }
+  const resourceMap = {}
+  for (const r of data.resources) {
+    if (r.id != null) {
+      resourceMap[r.id] = { name: r.name, deviceCodename: r.deviceCodename }
+    }
+  }
+
+  // 扁平化评论，附带资源信息
+  const flat = []
+  for (const [rid, cmts] of Object.entries(data.comments)) {
+    const resInfo = resourceMap[rid] || { name: `#${rid}`, deviceCodename: '?' }
+    for (const c of cmts) {
+      flat.push({
+        comment: c,
+        resourceId: rid,
+        resourceName: resInfo.name,
+        deviceCodename: resInfo.deviceCodename
+      })
+    }
+  }
+
+  // 按时间倒序
+  flat.sort((a, b) => (b.comment.time || 0) - (a.comment.time || 0))
+  return flat
+})
+
+/**
+ * 格式化毫秒时间戳为可读时间。
+ */
+function formatTime(ts) {
+  if (!ts) return ''
+  return new Date(ts).toLocaleString('zh-CN', {
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit'
+  })
+}
 
 // ----------------------------------------------------------
 // 核心逻辑
@@ -385,6 +460,8 @@ onMounted(async () => {
   font-size: 22px;
   font-weight: 600;
   color: var(--vp-c-text-1);
+  border-top: none;
+  padding-top: 0;
 }
 
 .state-desc {
@@ -495,15 +572,8 @@ onMounted(async () => {
 
 .unlock-header {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin-bottom: 20px;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.unlock-header .state-title {
-  margin-bottom: 0;
 }
 
 .clear-cache-btn {
@@ -558,6 +628,111 @@ onMounted(async () => {
 /* JSON 详情 */
 .json-details {
   margin-top: 8px;
+}
+
+/* ======== 评论时间线 ======== */
+.comment-section {
+  margin-top: 28px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  color: var(--vp-c-text-1);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 8px;
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  transition: border-color 0.2s;
+}
+
+.timeline-item:hover {
+  border-color: var(--vp-c-brand-1);
+}
+
+.timeline-avatar {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--vp-c-bg-soft);
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.timeline-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.timeline-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.comment-nickname {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+}
+
+.comment-time {
+  font-size: 12px;
+  color: var(--vp-c-text-3);
+}
+
+.comment-content {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--vp-c-text-1);
+  word-break: break-word;
+}
+
+.comment-badges {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.badge-resource {
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+}
+
+.badge-device {
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-2);
+  border: 1px solid var(--vp-c-divider);
 }
 
 .json-summary {
