@@ -57,7 +57,21 @@
         </div>
         <div class="summary-item">
           <span class="summary-num">{{ generatedTime }}</span>
-          <span class="summary-label">生成时间</span>
+          <span class="summary-label">更新于</span>
+        </div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-item">
+          <span class="summary-num">{{ fmtNum(totalDownloads) }}</span>
+          <span class="summary-label">总下载</span>
+        </div>
+        <div class="summary-item">
+          <span class="summary-num">{{ fmtNum(totalViews) }}</span>
+          <span class="summary-label">总浏览</span>
+        </div>
+        <div class="summary-item">
+          <span class="summary-num">{{ topCommentedResource ? topCommentedResource.name : '-' }}</span>
+          <span class="summary-label">最热评论</span>
         </div>
       </div>
 
@@ -190,6 +204,50 @@ const generatedTime = computed(() => {
     minute: '2-digit'
   })
 })
+
+/** 总下载量 */
+const totalDownloads = computed(() => {
+  if (!decryptedData.value?.resources) return 0
+  let sum = 0
+  for (const r of decryptedData.value.resources) {
+    sum += r.downloadTimes || 0
+  }
+  return sum
+})
+
+/** 总浏览量 */
+const totalViews = computed(() => {
+  if (!decryptedData.value?.resources) return 0
+  let sum = 0
+  for (const r of decryptedData.value.resources) {
+    sum += r.views || 0
+  }
+  return sum
+})
+
+/** 评论最多的作品 */
+const topCommentedResource = computed(() => {
+  const data = decryptedData.value
+  if (!data?.resources || !data?.comments) return null
+
+  let maxCount = 1
+  let top = null
+  for (const r of data.resources) {
+    const cmts = data.comments[r.id]
+    const count = Array.isArray(cmts) ? cmts.length : 0
+    if (count >= maxCount) {
+      maxCount = count
+      top = r
+    }
+  }
+  return top
+})
+
+/** 格式化大数字，加千分位逗号 */
+function fmtNum(n) {
+  if (n == null) return '0'
+  return Number(n).toLocaleString('zh-CN')
+}
 
 /**
  * 评论时间线：将所有评论按时间倒序排列，并附带所属资源的 name 和 deviceCodename。
@@ -407,7 +465,7 @@ onMounted(async () => {
 /* ---- 通用卡片 ---- */
 .state-card {
   border-radius: 8px; /* fallback */
-  padding: 40px 32px;
+  padding: 32px 24px;
   text-align: center;
   background: var(--vp-c-bg-soft);
   border: 1px solid var(--vp-c-divider);
@@ -418,6 +476,12 @@ onMounted(async () => {
   .state-card {
     border-radius: 20px;
     corner-shape: superellipse(1.5);
+  }
+}
+
+@media (max-width: 640px) {
+  .state-card {
+    padding: 20px 16px;
   }
 }
 
@@ -483,6 +547,13 @@ onMounted(async () => {
   transition: border-color 0.2s;
 }
 
+@supports (corner-shape: superellipse(1.5)) {
+  .input-group {
+    border-radius: 16px;
+    corner-shape: superellipse(1.5);
+  }
+}
+
 .input-group:focus-within {
   border-color: var(--vp-c-brand-1);
   box-shadow: 0 0 0 2px var(--vp-c-brand-soft);
@@ -517,6 +588,13 @@ onMounted(async () => {
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.2s, transform 0.1s;
+}
+
+@supports (corner-shape: superellipse(1.5)) {
+  .decrypt-btn {
+    border-radius: 16px;
+    corner-shape: superellipse(1.5);
+  }
 }
 
 .decrypt-btn:hover:not(:disabled) {
@@ -560,6 +638,13 @@ onMounted(async () => {
   margin-right: auto;
 }
 
+@supports (corner-shape: superellipse(1.5)) {
+  .error-banner {
+    border-radius: 16px;
+    corner-shape: superellipse(1.5);
+  }
+}
+
 .error-icon {
   font-size: 16px;
   flex-shrink: 0;
@@ -587,6 +672,13 @@ onMounted(async () => {
   transition: all 0.2s;
 }
 
+@supports (corner-shape: superellipse(1.5)) {
+  .clear-cache-btn {
+    border-radius: 14px;
+    corner-shape: superellipse(1.5);
+  }
+}
+
 .clear-cache-btn:hover {
   color: var(--vp-c-danger-1);
   border-color: var(--vp-c-danger-1);
@@ -610,6 +702,20 @@ onMounted(async () => {
   text-align: center;
 }
 
+@supports (corner-shape: superellipse(1.5)) {
+  .summary-item {
+    border-radius: 16px;
+    corner-shape: superellipse(1.5);
+  }
+}
+
+@media (max-width: 640px) {
+  .summary-item {
+    padding: 12px 8px;
+    min-width: 80px;
+  }
+}
+
 .summary-num {
   display: block;
   font-size: 24px;
@@ -623,11 +729,6 @@ onMounted(async () => {
   font-size: 13px;
   color: var(--vp-c-text-2);
   margin-top: 4px;
-}
-
-/* JSON 详情 */
-.json-details {
-  margin-top: 8px;
 }
 
 /* ======== 评论时间线 ======== */
@@ -656,6 +757,20 @@ onMounted(async () => {
   background: var(--vp-c-bg);
   border: 1px solid var(--vp-c-divider);
   transition: border-color 0.2s;
+}
+
+@supports (corner-shape: superellipse(1.5)) {
+  .timeline-item {
+    border-radius: 16px;
+    corner-shape: superellipse(1.5);
+  }
+}
+
+@media (max-width: 640px) {
+  .timeline-item {
+    padding: 12px;
+    gap: 10px;
+  }
 }
 
 .timeline-item:hover {
@@ -718,7 +833,7 @@ onMounted(async () => {
 .badge {
   display: inline-block;
   padding: 2px 10px;
-  border-radius: 10px;
+  border-radius: 999px;
   font-size: 12px;
   font-weight: 500;
   line-height: 1.6;
@@ -739,7 +854,7 @@ onMounted(async () => {
   cursor: pointer;
   font-size: 14px;
   color: var(--vp-c-text-2);
-  padding: 8px 0;
+  padding: 20px 0 0 0;
   user-select: none;
 }
 
@@ -762,6 +877,20 @@ onMounted(async () => {
   overflow-y: auto;
   white-space: pre-wrap;
   word-break: break-all;
+}
+
+@supports (corner-shape: superellipse(1.5)) {
+  .json-pre {
+    border-radius: 16px;
+    corner-shape: superellipse(1.5);
+  }
+}
+
+@media (max-width: 640px) {
+  .json-pre {
+    padding: 12px;
+    font-size: 12px;
+  }
 }
 
 /* ---- 错误状态 ---- */
