@@ -42,6 +42,15 @@
     <!-- ============ 已解锁（展示数据） ============ -->
     <div v-else-if="state === 'unlocked' && decryptedData" class="state-card unlocked-card">
       <div class="unlock-header">
+        <a class="switch-page-btn" href="/docs/creation/watchface/gallery">总览</a>
+        <a
+          class="update-content-btn"
+          href="https://github.com/hrsthrt74/mibandtool-bot/actions/workflows/daily-fetch.yml"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          更新内容
+        </a>
         <button class="clear-cache-btn" @click="clearCache">清除缓存</button>
       </div>
 
@@ -658,7 +667,56 @@ onMounted(async () => {
 .unlock-header {
   display: flex;
   justify-content: flex-end;
+  gap: 8px;
   margin-bottom: 20px;
+}
+
+.switch-page-btn {
+  padding: 6px 14px;
+  font-size: 13px;
+  color: var(--vp-c-text-1);
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+@supports (corner-shape: superellipse(1.5)) {
+  .switch-page-btn {
+    border-radius: 14px;
+    corner-shape: superellipse(1.5);
+  }
+}
+
+.switch-page-btn:hover {
+  color: var(--vp-c-brand-1);
+  border-color: var(--vp-c-brand-1);
+}
+
+.update-content-btn {
+  padding: 6px 14px;
+  font-size: 13px;
+  color: var(--vp-c-text-1);
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+@supports (corner-shape: superellipse(1.5)) {
+  .update-content-btn {
+    border-radius: 14px;
+    corner-shape: superellipse(1.5);
+  }
+}
+
+.update-content-btn:hover {
+  color: var(--vp-c-brand-1);
+  border-color: var(--vp-c-brand-1);
 }
 
 .clear-cache-btn {

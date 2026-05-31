@@ -65,6 +65,18 @@
             <option value="views">最多浏览</option>
             <option value="createdAt">最早创建</option>
           </select>
+          <a class="switch-page-btn" href="/docs/creation/watchface/dashboard">看板</a>
+          <button class="view-toggle-btn" @click="toggleImages">
+            {{ showImages ? '无图模式' : '有图模式' }}
+          </button>
+          <a
+            class="update-content-btn"
+            href="https://github.com/hrsthrt74/mibandtool-bot/actions/workflows/daily-fetch.yml"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            更新内容
+          </a>
           <button class="clear-cache-btn" @click="clearCache">清除缓存</button>
         </div>
       </div>
@@ -86,7 +98,7 @@
           @click="toggleExpand(res.id)"
         >
           <!-- 预览图 -->
-          <div class="card-preview">
+          <div v-if="showImages" class="card-preview">
             <img
               :src="res.preview"
               :alt="res.name"
@@ -163,6 +175,7 @@ const passwordInput = ref(null)
 const filterDevice = ref('')
 const sortBy = ref('updatedAt')
 const expandedId = ref(null)
+const showImages = ref(true)
 
 // ----------------------------------------------------------
 // 计算属性
@@ -229,6 +242,10 @@ function fmtFileSize(bytes) {
 
 function toggleExpand(id) {
   expandedId.value = expandedId.value === id ? null : id
+}
+
+function toggleImages() {
+  showImages.value = !showImages.value
 }
 
 const fallbackPreview =
@@ -442,6 +459,59 @@ watch(state, async (val) => {
 
 .clear-cache-btn:hover { color: var(--vp-c-danger-1); border-color: var(--vp-c-danger-1); }
 
+.update-content-btn {
+  padding: 6px 14px;
+  font-size: 13px;
+  color: var(--vp-c-text-1);
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+@supports (corner-shape: superellipse(1.5)) {
+  .update-content-btn { border-radius: 14px; corner-shape: superellipse(1.5); }
+}
+
+.update-content-btn:hover { color: var(--vp-c-brand-1); border-color: var(--vp-c-brand-1); }
+
+.view-toggle-btn {
+  padding: 6px 14px;
+  font-size: 13px;
+  color: var(--vp-c-text-1);
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+@supports (corner-shape: superellipse(1.5)) {
+  .view-toggle-btn { border-radius: 14px; corner-shape: superellipse(1.5); }
+}
+
+.view-toggle-btn:hover { color: var(--vp-c-brand-1); border-color: var(--vp-c-brand-1); }
+
+.switch-page-btn {
+  padding: 6px 14px;
+  font-size: 13px;
+  color: var(--vp-c-text-1);
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+@supports (corner-shape: superellipse(1.5)) {
+  .switch-page-btn { border-radius: 14px; corner-shape: superellipse(1.5); }
+}
+
+.switch-page-btn:hover { color: var(--vp-c-brand-1); border-color: var(--vp-c-brand-1); }
+
 /* 统计条 */
 .gallery-stats {
   display: flex;
@@ -504,6 +574,7 @@ watch(state, async (val) => {
   overflow: hidden;
   background: var(--vp-c-default-soft);
 }
+
 
 .card-preview img {
   width: 100%;
