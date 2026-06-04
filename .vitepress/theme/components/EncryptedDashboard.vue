@@ -90,6 +90,46 @@
         </div>
       </div>
 
+      <!-- ======== 图表可视化 ======== -->
+      <div class="chart-toggle-bar">
+        <button class="chart-toggle-btn" @click="chartsExpanded = !chartsExpanded">
+          <span class="toggle-icon">{{ chartsExpanded ? '▼' : '▶' }}</span>
+          {{ chartsExpanded ? '收起图表' : '展开图表' }}
+        </button>
+      </div>
+
+      <div v-show="chartsExpanded" class="charts-grid">
+        <div v-if="chartDeviceDistribution" class="chart-card">
+          <h3 class="section-title">📱 设备资源分布</h3>
+          <VChart :option="chartDeviceDistribution" autoresize class="chart-box" />
+        </div>
+        <div v-if="chartTopDownloads" class="chart-card">
+          <h3 class="section-title">⬇️ 下载排行 Top 15</h3>
+          <VChart :option="chartTopDownloads" autoresize class="chart-box" />
+        </div>
+        <div v-if="chartTopViews" class="chart-card">
+          <h3 class="section-title">👁️ 浏览排行 Top 15</h3>
+          <VChart :option="chartTopViews" autoresize class="chart-box" />
+        </div>
+        <div v-if="chartTopCommented" class="chart-card">
+          <h3 class="section-title">💬 评论最多 Top 10</h3>
+          <VChart :option="chartTopCommented" autoresize class="chart-box" />
+        </div>
+        <div v-if="chartCreationTrend" class="chart-card">
+          <h3 class="section-title">📅 资源发布趋势</h3>
+          <VChart :option="chartCreationTrend" autoresize class="chart-box" />
+        </div>
+        <div v-if="chartCommentTrend" class="chart-card">
+          <h3 class="section-title">📅 评论活跃趋势</h3>
+          <VChart :option="chartCommentTrend" autoresize class="chart-box" />
+        </div>
+        <div v-if="chartScatter" class="chart-card chart-card-wide">
+          <h3 class="section-title">🔍 下载 vs 浏览（气泡大小=评论数）</h3>
+          <VChart :option="chartScatter" autoresize class="chart-box" />
+        </div>
+
+      </div>
+
       <!-- 评论时间线 -->
       <div v-if="commentTimeline.length" class="comment-section">
         <h3 class="section-title">💬 评论时间线</h3>
@@ -156,7 +196,37 @@
 // ============================================================
 
 import { ref, computed, onMounted, nextTick } from 'vue'
+import { useData } from 'vitepress'
 import CryptoJS from 'crypto-js'
+
+// ---- ECharts 按需引入 ----
+import { use } from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import {
+  PieChart,
+  BarChart,
+  LineChart,
+  ScatterChart
+} from 'echarts/charts'
+import {
+  TitleComponent,
+  TooltipComponent,
+  LegendComponent,
+  GridComponent
+} from 'echarts/components'
+import VChart from 'vue-echarts'
+
+use([
+  CanvasRenderer,
+  PieChart,
+  BarChart,
+  LineChart,
+  ScatterChart,
+  TitleComponent,
+  TooltipComponent,
+  LegendComponent,
+  GridComponent
+])
 
 // ----------------------------------------------------------
 // 常量（与 Python 后端对齐）
@@ -198,6 +268,9 @@ const jsonModalVisible = ref(false)
 
 /** JSON 模态框中的 <pre> 引用 */
 const jsonPreRef = ref(null)
+
+/** 图表区域是否展开 */
+const chartsExpanded = ref(false)
 
 // ----------------------------------------------------------
 // 计算属性
@@ -265,6 +338,298 @@ function fmtNum(n) {
   if (n == null) return '0'
   return Number(n).toLocaleString('zh-CN')
 }
+
+// ----------------------------------------------------------
+// VitePress 主题检测
+// ----------------------------------------------------------
+
+const { isDark } = useData()
+
+/** 根据 VitePress 亮/暗模式提供 ECharts 用的颜色 token */
+const chartTheme = computed(() => ({
+  textColor: isDark.value ? '#c9d1d9' : '#3c3c43',
+  textColorDim: isDark.value ? '#8b949e' : '#8e8e93',
+  tooltipBg: isDark.value ? 'rgba(28,33,40,0.95)' : 'rgba(255,255,255,0.95)',
+  tooltipBorder: isDark.value ? '#30363d' : '#d0d0d0',
+  tooltipText: isDark.value ? '#c9d1d9' : '#3c3c43'
+}))
+
+// ----------------------------------------------------------
+// 图表配色（与 VitePress 品牌色协调）
+// ----------------------------------------------------------
+const CHART_COLORS = [
+  '#3451b2', '#e8733a', '#3c8e40', '#c53030',
+  '#6f42c1', '#d48200', '#2b8a8a', '#b44d8c',
+  '#5470c6', '#91cc75', '#fac858', '#ee6666',
+  '#73c0de', '#3ba272', '#fc8452', '#9a60b4'
+]
+
+// ----------------------------------------------------------
+// 图表计算属性
+// ----------------------------------------------------------
+
+// --- Chart 1: 设备资源分布（环形图） ---
+const chartDeviceDistribution = computed(() => {
+  const data = decryptedData.value
+  if (!data?.resources?.length) return null
+
+  const countMap = {}
+  for (const r of data.resources) {
+    const dn = r.deviceName || r.deviceCodename || '未知'
+    countMap[dn] = (countMap[dn] || 0) + 1
+  }
+  const items = Object.entries(countMap)
+    .map(([name, value]) => ({ name, value }))
+    .sort((a, b) => b.value - a.value)
+  const t = chartTheme.value
+
+  return {
+    tooltip: {
+      trigger: 'item',
+      formatter: '{b}: {c} ({d}%)',
+      backgroundColor: t.tooltipBg,
+      borderColor: t.tooltipBorder,
+      textStyle: { color: t.tooltipText }
+    },
+    legend: { show: false },
+    series: [{
+      type: 'pie',
+      radius: ['45%', '75%'],
+      center: ['55%', '50%'],
+      itemStyle: { borderRadius: 4, borderColor: t.tooltipBorder, borderWidth: 2 },
+      label: { color: t.textColor, formatter: '{b}\n{d}%' },
+      data: items,
+      color: CHART_COLORS
+    }]
+  }
+})
+
+// --- Chart 2: Top 15 下载排行（横向柱状图） ---
+const chartTopDownloads = computed(() => {
+  const data = decryptedData.value
+  if (!data?.resources?.length) return null
+
+  const sorted = [...data.resources].sort((a, b) => (b.downloadTimes || 0) - (a.downloadTimes || 0)).slice(0, 15)
+  return makeHorizontalBar(sorted, 'downloadTimes', '下载量', '下载', CHART_COLORS[1])
+})
+
+// --- Chart 3: Top 15 浏览排行（横向柱状图） ---
+const chartTopViews = computed(() => {
+  const data = decryptedData.value
+  if (!data?.resources?.length) return null
+
+  const sorted = [...data.resources].sort((a, b) => (b.views || 0) - (a.views || 0)).slice(0, 15)
+  return makeHorizontalBar(sorted, 'views', '浏览量', '浏览', CHART_COLORS[2])
+})
+
+// --- Chart 4: 评论最多作品排行（横向柱状图） ---
+const chartTopCommented = computed(() => {
+  const data = decryptedData.value
+  if (!data?.resources?.length || !data?.comments) return null
+
+  const withCount = data.resources.map(r => {
+    const cmts = data.comments[r.id]
+    const count = Array.isArray(cmts) ? cmts.length : 0
+    return { ...r, _commentCount: count }
+  })
+  withCount.sort((a, b) => b._commentCount - a._commentCount)
+  const top = withCount.slice(0, 10)
+
+  return makeHorizontalBar(top, '_commentCount', '评论数', '评论', CHART_COLORS[3])
+})
+
+/**
+ * 构建横向柱状图（Top N）的 ECharts option。
+ */
+function makeHorizontalBar(list, field, label, shortLabel, color) {
+  const names = list.map(r => {
+    const raw = r.name || '(无标题)'
+    return raw.length > 14 ? raw.slice(0, 13) + '…' : raw
+  }).reverse()
+  const values = list.map(r => r[field] || 0).reverse()
+  const t = chartTheme.value
+
+  return {
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: { type: 'shadow' },
+      backgroundColor: t.tooltipBg,
+      borderColor: t.tooltipBorder,
+      textStyle: { color: t.tooltipText },
+      formatter: p => {
+        const d = p[0]
+        return `${list[list.length - 1 - d.dataIndex].name}<br/>${shortLabel}: ${fmtNum(d.value)}`
+      }
+    },
+    grid: { left: 100, right: 40, top: 5, bottom: 5 },
+    xAxis: { type: 'value', axisLabel: { color: t.textColorDim, fontSize: 11, formatter: v => fmtNum(v) } },
+    yAxis: { type: 'category', data: names, axisLabel: { color: t.textColor, fontSize: 12 }, inverse: true },
+    series: [{
+      type: 'bar',
+      data: values,
+      itemStyle: { color, borderRadius: [0, 4, 4, 0] },
+      barMaxWidth: 20
+    }]
+  }
+}
+
+// --- Chart 5: 资源发布趋势（面积图） ---
+const chartCreationTrend = computed(() => {
+  const data = decryptedData.value
+  if (!data?.resources?.length) return null
+
+  const monthMap = {}
+  let minMonth = Infinity
+  let maxMonth = -Infinity
+  for (const r of data.resources) {
+    if (!r.createdAt) continue
+    const d = new Date(r.createdAt)
+    const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`
+    monthMap[key] = (monthMap[key] || 0) + 1
+    const ms = d.getTime()
+    if (ms < minMonth) minMonth = ms
+    if (ms > maxMonth) maxMonth = ms
+  }
+
+  const allMonths = fillMonthRange(minMonth, maxMonth)
+  const xData = allMonths
+  const yData = allMonths.map(m => monthMap[m] || 0)
+  const t = chartTheme.value
+
+  return {
+    tooltip: {
+      trigger: 'axis',
+      backgroundColor: t.tooltipBg,
+      borderColor: t.tooltipBorder,
+      textStyle: { color: t.tooltipText }
+    },
+    grid: { left: 40, right: 20, top: 10, bottom: 25 },
+    xAxis: { type: 'category', data: xData, axisLabel: { color: t.textColorDim, fontSize: 10, rotate: 30 } },
+    yAxis: { type: 'value', axisLabel: { color: t.textColorDim, fontSize: 11 } },
+    series: [{
+      type: 'line',
+      data: yData,
+      smooth: true,
+      areaStyle: { color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(52,81,178,0.25)' }, { offset: 1, color: 'rgba(52,81,178,0.02)' }] } },
+      lineStyle: { color: CHART_COLORS[0], width: 2 },
+      itemStyle: { color: CHART_COLORS[0] },
+      symbol: 'circle',
+      symbolSize: 4
+    }]
+  }
+})
+
+// --- Chart 6: 评论活跃趋势（面积图） ---
+const chartCommentTrend = computed(() => {
+  const data = decryptedData.value
+  if (!data?.comments) return null
+
+  const monthMap = {}
+  let minMonth = Infinity
+  let maxMonth = -Infinity
+  for (const cmts of Object.values(data.comments)) {
+    if (!Array.isArray(cmts)) continue
+    for (const c of cmts) {
+      if (!c.time) continue
+      const d = new Date(c.time)
+      const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`
+      monthMap[key] = (monthMap[key] || 0) + 1
+      const ms = d.getTime()
+      if (ms < minMonth) minMonth = ms
+      if (ms > maxMonth) maxMonth = ms
+    }
+  }
+
+  const allMonths = fillMonthRange(minMonth, maxMonth)
+  const xData = allMonths
+  const yData = allMonths.map(m => monthMap[m] || 0)
+  const t = chartTheme.value
+
+  return {
+    tooltip: {
+      trigger: 'axis',
+      backgroundColor: t.tooltipBg,
+      borderColor: t.tooltipBorder,
+      textStyle: { color: t.tooltipText }
+    },
+    grid: { left: 40, right: 20, top: 10, bottom: 25 },
+    xAxis: { type: 'category', data: xData, axisLabel: { color: t.textColorDim, fontSize: 10, rotate: 30 } },
+    yAxis: { type: 'value', axisLabel: { color: t.textColorDim, fontSize: 11 } },
+    series: [{
+      type: 'line',
+      data: yData,
+      smooth: true,
+      areaStyle: { color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(232,115,58,0.25)' }, { offset: 1, color: 'rgba(232,115,58,0.02)' }] } },
+      lineStyle: { color: CHART_COLORS[1], width: 2 },
+      itemStyle: { color: CHART_COLORS[1] },
+      symbol: 'circle',
+      symbolSize: 4
+    }]
+  }
+})
+
+/** 填补两个时间戳之间的所有月份，返回 "YYYY-MM" 数组 */
+function fillMonthRange(tsMin, tsMax) {
+  if (!isFinite(tsMin) || !isFinite(tsMax)) return []
+  const d = new Date(tsMin)
+  d.setDate(1)
+  d.setHours(0, 0, 0, 0)
+  const end = new Date(tsMax)
+  const months = []
+  while (d <= end) {
+    months.push(`${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`)
+    d.setMonth(d.getMonth() + 1)
+  }
+  return months
+}
+
+// --- Chart 7: 下载 vs 浏览（气泡散点图） ---
+const chartScatter = computed(() => {
+  const data = decryptedData.value
+  if (!data?.resources?.length) return null
+
+  // 按设备分组，每个设备一个 series
+  const deviceGroups = {}
+  for (const r of data.resources) {
+    const dn = r.deviceName || r.deviceCodename || '未知'
+    if (!deviceGroups[dn]) deviceGroups[dn] = []
+    const cmts = data?.comments?.[r.id]
+    const cmtCount = Array.isArray(cmts) ? cmts.length : 0
+    deviceGroups[dn].push({
+      value: [r.views || 0, r.downloadTimes || 0, cmtCount, r.name],
+      name: r.name
+    })
+  }
+
+  const deviceNames = Object.keys(deviceGroups)
+  const series = deviceNames.map((dn, i) => ({
+    name: dn,
+    type: 'scatter',
+    data: deviceGroups[dn],
+    symbolSize: d => Math.max(6, Math.min(40, Math.sqrt(d[2] || 1) * 5)),
+    itemStyle: { color: CHART_COLORS[i % CHART_COLORS.length], opacity: 0.7 },
+    emphasis: { itemStyle: { opacity: 1 } }
+  }))
+  const t = chartTheme.value
+
+  return {
+    tooltip: {
+      trigger: 'item',
+      backgroundColor: t.tooltipBg,
+      borderColor: t.tooltipBorder,
+      textStyle: { color: t.tooltipText },
+      formatter: p => {
+        const d = p.data.value || p.data
+        return `<strong>${d[3] || p.seriesName}</strong><br/>浏览: ${fmtNum(d[0])}<br/>下载: ${fmtNum(d[1])}<br/>评论: ${d[2]}`
+      }
+    },
+    legend: { top: 5, textStyle: { color: t.textColor, fontSize: 11 } },
+    grid: { left: 55, right: 20, top: 45, bottom: 40 },
+    xAxis: { type: 'value', name: '浏览', nameTextStyle: { color: t.textColorDim }, axisLabel: { color: t.textColorDim, fontSize: 10, formatter: v => fmtNum(v) } },
+    yAxis: { type: 'value', name: '下载', nameTextStyle: { color: t.textColorDim }, axisLabel: { color: t.textColorDim, fontSize: 10, formatter: v => fmtNum(v) } },
+    series
+  }
+})
 
 /**
  * 评论时间线：将所有评论按时间倒序排列，并附带所属资源的 name 和 deviceCodename。
@@ -1021,6 +1386,108 @@ onMounted(async () => {
   color: var(--vp-c-text-1);
   white-space: pre;
   tab-size: 2;
+}
+
+/* ---- 图表折叠 ---- */
+.chart-toggle-bar {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.chart-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--vp-c-text-1);
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+@supports (corner-shape: superellipse(1.5)) {
+  .chart-toggle-btn {
+    border-radius: 16px;
+    corner-shape: superellipse(1.5);
+  }
+}
+
+.chart-toggle-btn:hover {
+  color: var(--vp-c-brand-1);
+  border-color: var(--vp-c-brand-1);
+}
+
+.toggle-icon {
+  display: inline-block;
+  font-size: 10px;
+  transition: transform 0.2s;
+}
+
+/* ---- 图表网格 ---- */
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.chart-card {
+  border-radius: 8px;
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  padding: 16px;
+  overflow: hidden;
+}
+
+@supports (corner-shape: superellipse(1.5)) {
+  .chart-card {
+    border-radius: 24px;
+    corner-shape: superellipse(1.5);
+  }
+}
+
+.chart-card .section-title {
+  margin: 0 0 8px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+}
+
+.chart-box {
+  width: 100%;
+  height: 320px;
+}
+
+.chart-card-wide {
+  grid-column: 1 / -1;
+}
+
+.chart-card-wide .chart-box {
+  height: 400px;
+}
+
+@media (max-width: 768px) {
+  .chart-card-wide {
+    grid-column: 1;
+  }
+
+  .chart-card-wide .chart-box {
+    height: 320px;
+  }
+
+  .chart-box {
+    height: 260px;
+  }
 }
 
 /* ---- 错误状态 ---- */
