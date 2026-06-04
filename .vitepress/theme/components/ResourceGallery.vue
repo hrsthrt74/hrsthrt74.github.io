@@ -63,20 +63,12 @@
             <option value="updatedAt">最新更新</option>
             <option value="downloadTimes">最多下载</option>
             <option value="views">最多浏览</option>
-            <option value="createdAt">最早创建</option>
+            <option value="createdAt">最新上传</option>
           </select>
-          <a class="switch-page-btn" href="/docs/creation/watchface/dashboard">看板</a>
+          <a class="switch-page-btn" href="/docs/creation/watchface/dashboard">数据看板</a>
           <button class="view-toggle-btn" @click="toggleImages">
             {{ showImages ? '无图模式' : '有图模式' }}
           </button>
-          <a
-            class="update-content-btn"
-            href="https://github.com/hrsthrt74/mibandtool-bot/actions/workflows/daily-fetch.yml"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            更新内容
-          </a>
           <button class="clear-cache-btn" @click="clearCache">清除缓存</button>
         </div>
       </div>
@@ -175,7 +167,7 @@ const passwordInput = ref(null)
 const filterDevice = ref('')
 const sortBy = ref('updatedAt')
 const expandedId = ref(null)
-const showImages = ref(true)
+const showImages = ref(import.meta.env.DEV)
 
 // ----------------------------------------------------------
 // 计算属性

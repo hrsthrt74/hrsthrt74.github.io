@@ -42,45 +42,51 @@
     <!-- ============ 已解锁（展示数据） ============ -->
     <div v-else-if="state === 'unlocked' && decryptedData" class="state-card unlocked-card">
       <div class="unlock-header">
-        <a class="switch-page-btn" href="/docs/creation/watchface/gallery">总览</a>
-        <a
-          class="update-content-btn"
-          href="https://github.com/hrsthrt74/mibandtool-bot/actions/workflows/daily-fetch.yml"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          更新内容
-        </a>
-        <button class="clear-cache-btn" @click="clearCache">清除缓存</button>
+        <a class="switch-page-btn" href="/docs/creation/watchface/gallery">资源总览</a>
+        <button class="header-btn" @click="showRawJson">原始 JSON</button>
+        <button class="header-btn danger" @click="clearCache">清除缓存</button>
       </div>
+
+      <!-- JSON 查看模态框（DOM 动态渲染，不会被 Ctrl+F 搜索到） -->
+      <Teleport to="body">
+        <div v-if="jsonModalVisible" class="json-modal-overlay" @click.self="jsonModalVisible = false">
+          <div class="json-modal">
+            <div class="json-modal-header">
+              <span>原始 JSON 数据</span>
+              <button class="json-modal-close" @click="jsonModalVisible = false">&times;</button>
+            </div>
+            <pre class="json-modal-body" ref="jsonPreRef"></pre>
+          </div>
+        </div>
+      </Teleport>
 
       <!-- 数据摘要 -->
       <div class="summary-row">
         <div class="summary-item">
-          <span class="summary-num">{{ decryptedData.resources?.length || 0 }}</span>
           <span class="summary-label">资源</span>
+          <span class="summary-num">{{ decryptedData.resources?.length || 0 }}</span>
         </div>
         <div class="summary-item">
-          <span class="summary-num">{{ totalComments }}</span>
           <span class="summary-label">评论</span>
+          <span class="summary-num">{{ totalComments }}</span>
         </div>
         <div class="summary-item">
-          <span class="summary-num">{{ generatedTime }}</span>
           <span class="summary-label">更新于</span>
+          <span class="summary-num">{{ generatedTime }}</span>
         </div>
       </div>
       <div class="summary-row">
         <div class="summary-item">
-          <span class="summary-num">{{ fmtNum(totalDownloads) }}</span>
           <span class="summary-label">总下载</span>
+          <span class="summary-num">{{ fmtNum(totalDownloads) }}</span>
         </div>
         <div class="summary-item">
-          <span class="summary-num">{{ fmtNum(totalViews) }}</span>
           <span class="summary-label">总浏览</span>
+          <span class="summary-num">{{ fmtNum(totalViews) }}</span>
         </div>
         <div class="summary-item">
-          <span class="summary-num">{{ topCommentedResource ? topCommentedResource.name : '-' }}</span>
           <span class="summary-label">最热评论</span>
+          <span class="summary-num">{{ topCommentedResource ? topCommentedResource.name : '-' }}</span>
         </div>
       </div>
 
@@ -104,7 +110,10 @@
             </div>
             <div class="timeline-body">
               <div class="timeline-header">
-                <span class="comment-nickname">{{ item.comment.nickname }}</span>
+                <span
+                  class="comment-nickname"
+                  :class="{ 'is-owner': item.comment.nickname === 'hrsthrt74' }"
+                >{{ item.comment.nickname }}</span>
                 <span class="comment-time">{{ formatTime(item.comment.time) }}</span>
               </div>
               <p class="comment-content">{{ item.comment.content }}</p>
@@ -117,11 +126,7 @@
         </div>
       </div>
 
-      <!-- JSON 明文展示（预留接入图表库的接口） -->
-      <details class="json-details">
-        <summary class="json-summary">📋 查看原始 JSON</summary>
-        <pre class="json-pre">{{ JSON.stringify(decryptedData, null, 2) }}</pre>
-      </details>
+      <!-- JSON 明文不渲染到 DOM 中，避免被浏览器 Ctrl+F 搜索到 -->
     </div>
 
     <!-- ============ 错误状态（网络/获取失败） ============ -->
@@ -188,6 +193,12 @@ const rawPayload = ref(null)
 /** 密码输入框引用 */
 const passwordInput = ref(null)
 
+/** JSON 模态框是否可见 */
+const jsonModalVisible = ref(false)
+
+/** JSON 模态框中的 <pre> 引用 */
+const jsonPreRef = ref(null)
+
 // ----------------------------------------------------------
 // 计算属性
 // ----------------------------------------------------------
@@ -206,9 +217,6 @@ const generatedTime = computed(() => {
   const ts = decryptedData.value?.generatedAt
   if (!ts) return '-'
   return new Date(ts).toLocaleString('zh-CN', {
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
     hour: '2-digit',
     minute: '2-digit'
   })
@@ -446,6 +454,20 @@ function clearCache() {
   state.value = 'locked'
 }
 
+/**
+ * 打开 JSON 查看模态框。
+ * 通过 textContent 动态注入 JSON，避免被浏览器 Ctrl+F 搜索到。
+ */
+function showRawJson() {
+  if (!decryptedData.value) return
+  jsonModalVisible.value = true
+  nextTick(() => {
+    if (jsonPreRef.value) {
+      jsonPreRef.value.textContent = JSON.stringify(decryptedData.value, null, 2)
+    }
+  })
+}
+
 // ----------------------------------------------------------
 // 生命周期
 // ----------------------------------------------------------
@@ -474,7 +496,7 @@ onMounted(async () => {
 /* ---- 通用卡片 ---- */
 .state-card {
   border-radius: 8px; /* fallback */
-  padding: 32px 24px;
+  padding: 16px 16px;
   text-align: center;
   background: var(--vp-c-bg-soft);
   border: 1px solid var(--vp-c-divider);
@@ -483,7 +505,7 @@ onMounted(async () => {
 
 @supports (corner-shape: superellipse(1.5)) {
   .state-card {
-    border-radius: 20px;
+    border-radius: 24px;
     corner-shape: superellipse(1.5);
   }
 }
@@ -719,10 +741,10 @@ onMounted(async () => {
   border-color: var(--vp-c-brand-1);
 }
 
-.clear-cache-btn {
+.header-btn {
   padding: 6px 14px;
   font-size: 13px;
-  color: var(--vp-c-text-2);
+  color: var(--vp-c-text-1);
   background: var(--vp-c-bg);
   border: 1px solid var(--vp-c-divider);
   border-radius: 6px;
@@ -731,13 +753,18 @@ onMounted(async () => {
 }
 
 @supports (corner-shape: superellipse(1.5)) {
-  .clear-cache-btn {
+  .header-btn {
     border-radius: 14px;
     corner-shape: superellipse(1.5);
   }
 }
 
-.clear-cache-btn:hover {
+.header-btn:hover {
+  color: var(--vp-c-brand-1);
+  border-color: var(--vp-c-brand-1);
+}
+
+.header-btn.danger:hover {
   color: var(--vp-c-danger-1);
   border-color: var(--vp-c-danger-1);
 }
@@ -745,8 +772,8 @@ onMounted(async () => {
 /* 数据摘要行 */
 .summary-row {
   display: flex;
-  gap: 16px;
-  margin-bottom: 20px;
+  gap: 8px;
+  margin-bottom: 8px;
   flex-wrap: wrap;
 }
 
@@ -762,7 +789,7 @@ onMounted(async () => {
 
 @supports (corner-shape: superellipse(1.5)) {
   .summary-item {
-    border-radius: 16px;
+    border-radius: 24px;
     corner-shape: superellipse(1.5);
   }
 }
@@ -778,15 +805,18 @@ onMounted(async () => {
   display: block;
   font-size: 24px;
   font-weight: 700;
-  color: var(--vp-c-brand-1);
+  color: var(--vp-c-text-1);
   line-height: 1.2;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  margin-bottom: 4px;
 }
 
 .summary-label {
   display: block;
   font-size: 13px;
-  color: var(--vp-c-text-2);
-  margin-top: 4px;
+  color: var(--vp-c-text-3);
+  margin-bottom: 4px;
 }
 
 /* ======== 评论时间线 ======== */
@@ -810,35 +840,36 @@ onMounted(async () => {
 .timeline-item {
   display: flex;
   gap: 12px;
-  padding: 16px;
+  padding: 12px 16px;
   border-radius: 8px;
   background: var(--vp-c-bg);
   border: 1px solid var(--vp-c-divider);
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 @supports (corner-shape: superellipse(1.5)) {
   .timeline-item {
-    border-radius: 16px;
+    border-radius: 24px;
     corner-shape: superellipse(1.5);
   }
 }
 
 @media (max-width: 640px) {
   .timeline-item {
-    padding: 12px;
+    padding: 10px 12px;
     gap: 10px;
   }
 }
 
 .timeline-item:hover {
   border-color: var(--vp-c-brand-1);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 .timeline-avatar {
   flex-shrink: 0;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   overflow: hidden;
   background: var(--vp-c-bg-soft);
@@ -869,23 +900,35 @@ onMounted(async () => {
   color: var(--vp-c-text-1);
 }
 
+.comment-nickname.is-owner {
+  color: var(--vp-c-brand-1);
+}
+
 .comment-time {
   font-size: 12px;
   color: var(--vp-c-text-3);
+  white-space: nowrap;
+  margin-left: auto;
+  flex-shrink: 0;
 }
 
 .comment-content {
-  margin: 0 0 8px 0;
+  margin: 0 0 4px 0;
   font-size: 14px;
   line-height: 1.5;
   color: var(--vp-c-text-1);
   word-break: break-word;
 }
 
+.comment-content:empty {
+  display: none;
+}
+
 .comment-badges {
   display: flex;
   gap: 6px;
   flex-wrap: wrap;
+  margin: 10px 0 6px 0;
 }
 
 .badge {
@@ -908,47 +951,76 @@ onMounted(async () => {
   border: 1px solid var(--vp-c-divider);
 }
 
-.json-summary {
-  cursor: pointer;
-  font-size: 14px;
-  color: var(--vp-c-text-2);
-  padding: 20px 0 0 0;
-  user-select: none;
+/* ---- JSON 模态框 ---- */
+.json-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  padding: 24px;
 }
 
-.json-summary:hover {
-  color: var(--vp-c-text-1);
-}
-
-.json-pre {
-  margin-top: 12px;
-  padding: 20px;
-  border-radius: 8px;
+.json-modal {
+  width: 100%;
+  max-width: 900px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
   background: var(--vp-c-bg);
   border: 1px solid var(--vp-c-divider);
-  font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
-  font-size: 13px;
-  line-height: 1.6;
-  color: var(--vp-c-text-1);
-  overflow-x: auto;
-  max-height: 600px;
-  overflow-y: auto;
-  white-space: pre-wrap;
-  word-break: break-all;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 @supports (corner-shape: superellipse(1.5)) {
-  .json-pre {
-    border-radius: 16px;
+  .json-modal {
+    border-radius: 20px;
     corner-shape: superellipse(1.5);
   }
 }
 
-@media (max-width: 640px) {
-  .json-pre {
-    padding: 12px;
-    font-size: 12px;
-  }
+.json-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+  border-bottom: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg-soft);
+}
+
+.json-modal-close {
+  border: none;
+  background: none;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--vp-c-text-3);
+  padding: 0 4px;
+  transition: color 0.2s;
+}
+
+.json-modal-close:hover {
+  color: var(--vp-c-text-1);
+}
+
+.json-modal-body {
+  flex: 1;
+  overflow: auto;
+  padding: 20px;
+  margin: 0;
+  font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--vp-c-text-1);
+  white-space: pre;
+  tab-size: 2;
 }
 
 /* ---- 错误状态 ---- */
