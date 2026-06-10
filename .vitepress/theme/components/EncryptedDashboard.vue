@@ -43,6 +43,7 @@
     <div v-else-if="state === 'unlocked' && decryptedData" class="state-card unlocked-card">
       <div class="unlock-header">
         <a class="switch-page-btn" href="/docs/creation/watchface/gallery">资源总览</a>
+        <a class="header-btn refresh-btn" href="https://github.com/hrsthrt74/mibandtool-bot/actions/workflows/daily-fetch.yml" target="_blank" rel="noopener noreferrer">🔄 刷新数据</a>
         <button class="header-btn" @click="showRawJson">原始 JSON</button>
         <button class="header-btn danger" @click="clearCache">清除缓存</button>
       </div>
@@ -132,7 +133,21 @@
 
       <!-- 评论时间线 -->
       <div v-if="commentTimeline.length" class="comment-section">
-        <h3 class="section-title">💬 评论时间线</h3>
+        <div class="comment-section-header">
+          <h3 class="section-title">💬 评论时间线</h3>
+          <div class="comment-filter">
+            <select v-model="selectedResourceId" class="filter-select">
+              <option :value="null">全部资源（{{ totalComments }} 条）</option>
+              <option
+                v-for="opt in resourceFilterOptions"
+                :key="opt.id"
+                :value="opt.id"
+              >
+                {{ opt.label }}（{{ opt.count }} 条）
+              </option>
+            </select>
+          </div>
+        </div>
         <div class="timeline">
           <div
             v-for="item in commentTimeline"
@@ -271,6 +286,9 @@ const jsonPreRef = ref(null)
 
 /** 图表区域是否展开 */
 const chartsExpanded = ref(false)
+
+/** 评论按资源筛选：选中的资源 ID（null = 全部） */
+const selectedResourceId = ref(null)
 
 // ----------------------------------------------------------
 // 计算属性
@@ -631,8 +649,41 @@ const chartScatter = computed(() => {
   }
 })
 
+/** 资源筛选下拉选项：用于评论过滤 */
+const resourceFilterOptions = computed(() => {
+  const data = decryptedData.value
+  if (!data?.resources?.length) return []
+
+  // 建立 resource ID → createdAt 的查找表
+  const createdMap = {}
+  for (const r of data.resources) {
+    if (r.id != null) {
+      createdMap[r.id] = r.createdAt ? new Date(r.createdAt).getTime() : 0
+    }
+  }
+
+  // 只保留有评论的资源
+  const options = []
+  for (const r of data.resources) {
+    const cmts = data.comments?.[r.id]
+    if (!Array.isArray(cmts) || cmts.length === 0) continue
+    options.push({
+      id: r.id,
+      label: r.name || `#${r.id}`,
+      deviceName: r.deviceName || r.deviceCodename || '',
+      count: cmts.length,
+      createdAt: r.createdAt ? new Date(r.createdAt).getTime() : 0
+    })
+  }
+
+  // 按上传时间降序排列（最新的在前）
+  options.sort((a, b) => b.createdAt - a.createdAt)
+  return options
+})
+
 /**
  * 评论时间线：将所有评论按时间倒序排列，并附带所属资源的 name 和 deviceCodename。
+ * 如果 selectedResourceId 不为 null，则只显示该资源的评论。
  */
 const commentTimeline = computed(() => {
   const data = decryptedData.value
@@ -649,6 +700,8 @@ const commentTimeline = computed(() => {
   // 扁平化评论，附带资源信息
   const flat = []
   for (const [rid, cmts] of Object.entries(data.comments)) {
+    // 如果筛选了特定资源，跳过其他资源
+    if (selectedResourceId.value != null && String(rid) !== String(selectedResourceId.value)) continue
     const resInfo = resourceMap[rid] || { name: `#${rid}`, deviceCodename: '?' }
     for (const c of cmts) {
       flat.push({
@@ -1134,6 +1187,10 @@ onMounted(async () => {
   border-color: var(--vp-c-danger-1);
 }
 
+.refresh-btn {
+  text-decoration: none;
+}
+
 /* 数据摘要行 */
 .summary-row {
   display: flex;
@@ -1189,10 +1246,60 @@ onMounted(async () => {
   margin-top: 28px;
 }
 
+.comment-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.comment-filter {
+  flex-shrink: 0;
+}
+
+.filter-select {
+  padding: 6px 32px 6px 12px;
+  font-size: 13px;
+  font-family: inherit;
+  color: var(--vp-c-text-1);
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238b949e' d='M3 4.5L6 7.5L9 4.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+  transition: border-color 0.2s;
+  max-width: 260px;
+}
+
+@supports (corner-shape: superellipse(1.5)) {
+  .filter-select {
+    border-radius: 16px;
+    corner-shape: superellipse(1.5);
+  }
+}
+
+.filter-select:focus {
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 0 0 2px var(--vp-c-brand-soft);
+  outline: none;
+}
+
+.filter-select:hover {
+  border-color: var(--vp-c-brand-1);
+}
+
 .section-title {
   font-size: 18px;
   font-weight: 600;
-  margin: 0 0 16px 0;
+  margin: 0;
   color: var(--vp-c-text-1);
 }
 
