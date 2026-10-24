@@ -119,6 +119,12 @@ features:
     link="https://evoa.top/"
   />
   <FriendCard
+    icon="https://lli.moe/img/icon.jpg"
+    title="Fmkli"
+    desc=""
+    link="https://lli.moe/"
+  />
+  <FriendCard
     icon="https://zaona.top/avatar.png"
     title="Zaona"
     desc=""
